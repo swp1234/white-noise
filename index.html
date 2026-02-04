@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="집중, 수면, 명상을 위한 백색소음 & 자연소리 플레이어">
+    <meta name="theme-color" content="#2c3e50">
+    <title>백색소음 플레이어</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 상단 배너 광고 영역 -->
+        <div class="ad-banner top-ad"></div>
+
+        <!-- 헤더 -->
+        <header class="app-header">
+            <h1>🌙 백색소음</h1>
+            <p class="subtitle">집중 · 수면 · 명상</p>
+        </header>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="main-content">
+            <!-- 타이머 섹션 -->
+            <section class="timer-section">
+                <div class="timer-display" id="timer-display">∞</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" data-minutes="15">15분</button>
+                    <button class="timer-btn" data-minutes="30">30분</button>
+                    <button class="timer-btn" data-minutes="60">1시간</button>
+                    <button class="timer-btn active" data-minutes="0">무한</button>
+                </div>
+            </section>
+
+            <!-- 사운드 믹서 -->
+            <section class="mixer-section">
+                <h2>🌿 자연 소리</h2>
+                <div class="sound-grid" id="sound-grid">
+                    <div class="sound-card" data-sound="rain">
+                        <div class="sound-icon">🌧️</div>
+                        <div class="sound-name">비</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="thunder">
+                        <div class="sound-icon">⛈️</div>
+                        <div class="sound-name">천둥</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="wind">
+                        <div class="sound-icon">💨</div>
+                        <div class="sound-name">바람</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="forest">
+                        <div class="sound-icon">🌲</div>
+                        <div class="sound-name">숲</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="birds">
+                        <div class="sound-icon">🐦</div>
+                        <div class="sound-name">새소리</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="ocean">
+                        <div class="sound-icon">🌊</div>
+                        <div class="sound-name">파도</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="fire">
+                        <div class="sound-icon">🔥</div>
+                        <div class="sound-name">모닥불</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="river">
+                        <div class="sound-icon">🏞️</div>
+                        <div class="sound-name">시냇물</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="waterfall">
+                        <div class="sound-icon">💧</div>
+                        <div class="sound-name">폭포</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="crickets">
+                        <div class="sound-icon">🦗</div>
+                        <div class="sound-name">귀뚜라미</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                </div>
+
+                <h2>🎧 백색소음 & 노이즈</h2>
+                <div class="sound-grid">
+                    <div class="sound-card" data-sound="white">
+                        <div class="sound-icon">⬜</div>
+                        <div class="sound-name">백색소음</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="pink">
+                        <div class="sound-icon">🩷</div>
+                        <div class="sound-name">핑크노이즈</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="brown">
+                        <div class="sound-icon">🟫</div>
+                        <div class="sound-name">브라운노이즈</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                </div>
+
+                <h2>🏠 생활 소리</h2>
+                <div class="sound-grid">
+                    <div class="sound-card" data-sound="cafe">
+                        <div class="sound-icon">☕</div>
+                        <div class="sound-name">카페</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="keyboard">
+                        <div class="sound-icon">⌨️</div>
+                        <div class="sound-name">키보드</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="train">
+                        <div class="sound-icon">🚂</div>
+                        <div class="sound-name">기차</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="fan">
+                        <div class="sound-icon">🌀</div>
+                        <div class="sound-name">선풍기</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                    <div class="sound-card" data-sound="aircon">
+                        <div class="sound-icon">❄️</div>
+                        <div class="sound-name">에어컨</div>
+                        <input type="range" class="volume-slider" min="0" max="100" value="0">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 프리셋 섹션 -->
+            <section class="preset-section">
+                <h2>추천 프리셋</h2>
+                <div class="preset-grid">
+                    <button class="preset-btn" data-preset="sleep">
+                        <span class="preset-icon">😴</span>
+                        <span class="preset-name">수면</span>
+                    </button>
+                    <button class="preset-btn" data-preset="focus">
+                        <span class="preset-icon">🎯</span>
+                        <span class="preset-name">집중</span>
+                    </button>
+                    <button class="preset-btn" data-preset="relax">
+                        <span class="preset-icon">🧘</span>
+                        <span class="preset-name">명상</span>
+                    </button>
+                    <button class="preset-btn" data-preset="nature">
+                        <span class="preset-icon">🌳</span>
+                        <span class="preset-name">자연</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 마스터 컨트롤 -->
+            <section class="master-section">
+                <div class="master-volume">
+                    <span>🔊</span>
+                    <input type="range" id="master-volume" min="0" max="100" value="80">
+                    <span id="volume-value">80%</span>
+                </div>
+                <button class="play-btn" id="play-btn">
+                    <span id="play-icon">▶</span>
+                </button>
+            </section>
+
+            <!-- 프리미엄 기능 -->
+            <section class="premium-section">
+                <button class="premium-btn" id="premium-btn">
+                    <span class="premium-icon">✨</span>
+                    수면 분석 & 팁 보기
+                    <span class="ad-tag">AD</span>
+                </button>
+            </section>
+
+            <!-- 프리미엄 결과 -->
+            <div class="result-card premium-result hidden" id="premium-result">
+                <div class="premium-badge">✨ 수면 전문가 팁</div>
+                <div id="premium-content"></div>
+            </div>
+        </main>
+
+        <!-- 전면 광고 모달 -->
+        <div class="interstitial-ad hidden" id="interstitial-ad">
+            <div class="ad-content">
+                <p>광고</p>
+                <div class="ad-placeholder">광고 영역</div>
+                <button id="close-ad" disabled>닫기 (<span id="countdown">5</span>)</button>
+            </div>
+        </div>
+
+        <!-- 하단 배너 광고 영역 -->
+        <div class="ad-banner bottom-ad"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
