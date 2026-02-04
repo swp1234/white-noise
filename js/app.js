@@ -13,7 +13,7 @@ class WhiteNoiseApp {
         this.timerRemaining = 0;
         
         // Freesound API 설정
-        this.apiKey = 'bq5bEe2KHPGHWIreFsq47s06wzpNNqrbZJheH96t';
+        this.apiKey = 'bq5bEe2KHPGHWlreFsq47s06wzpNNqrbZJheH96t';
         this.soundsLoaded = false;
         this.soundPreviews = {};
         
@@ -32,23 +32,23 @@ class WhiteNoiseApp {
 
     // Freesound에서 고품질 CC0/CC-BY 사운드 프리뷰 URL 가져오기
     async loadFreesoundPreviews() {
-        // 엄선된 Freesound ID (CC0 또는 CC-BY 라이선스)
+        // 엄선된 Freesound ID (CC0 라이선스, 부드럽고 편안한 사운드)
         const freesoundIds = {
-            rain: 346642,       // Rain on window CC0
-            thunder: 501104,    // Thunder storm CC0
-            wind: 370723,       // Wind outdoor CC0
-            forest: 509070,     // Forest ambience CC0
-            birds: 531015,      // Birds singing CC0
-            ocean: 527602,      // Ocean waves CC0
-            fire: 532281,       // Campfire CC0
-            river: 398936,      // Stream water CC0
-            waterfall: 370144,  // Waterfall CC0
-            crickets: 459285,   // Crickets night CC0
-            cafe: 456522,       // Cafe ambience CC0
-            keyboard: 417614,   // Mechanical keyboard CC0
-            train: 268903,      // Train ambience CC0
-            fan: 382928,        // Fan white noise CC0
-            aircon: 373188      // Air conditioner CC0
+            rain: 397636,       // Gentle suburb rain (부드러운 비)
+            thunder: 812926,    // Thunder Rumbles from Interior
+            wind: 469596,       // A minute of peace (gentle breeze)
+            forest: 474341,     // Forest birds ambient
+            birds: 327444,      // Birds Chirping on a Tree
+            ocean: 578524,      // Calm ocean waves
+            fire: 637523,       // Campfire crackling
+            river: 697495,      // Gentle Relaxing Stream
+            waterfall: 800738,  // Small Waterfall in park
+            crickets: 331444,   // Gentle cricket and insects at night
+            cafe: 437461,       // Quiet cafe chatter ambient
+            keyboard: 546165,   // Keyboard Typing (HHKB Topre)
+            train: 152584,      // London train interior calm
+            fan: 838459,        // White Noise Fan gentle
+            aircon: 234918      // Ambient low hum aircon
         };
 
         const loadingEl = document.createElement('div');
@@ -63,6 +63,11 @@ class WhiteNoiseApp {
                 );
                 if (response.ok) {
                     const data = await response.json();
+                    
+                    if (!data.previews || !data.previews['preview-hq-mp3']) {
+                        return;
+                    }
+                    
                     this.soundPreviews[type] = {
                         url: data.previews['preview-hq-mp3'],
                         name: data.name,
@@ -72,6 +77,7 @@ class WhiteNoiseApp {
                     
                     // 오디오 엘리먼트 미리 생성
                     const audio = new Audio();
+                    audio.crossOrigin = 'anonymous';
                     audio.src = this.soundPreviews[type].url;
                     audio.loop = true;
                     audio.preload = 'auto';
@@ -85,7 +91,13 @@ class WhiteNoiseApp {
 
         await Promise.allSettled(promises);
         
-        loadingEl.innerHTML = '<span>✅ 사운드 로드 완료</span>';
+        const loadedCount = Object.keys(this.soundPreviews).length;
+        
+        if (loadedCount === 0) {
+            loadingEl.innerHTML = '<span>⚠️ 합성 사운드 사용 중</span>';
+        } else {
+            loadingEl.innerHTML = `<span>✅ ${loadedCount}개 사운드 로드 완료</span>`;
+        }
         setTimeout(() => loadingEl.remove(), 2000);
         
         this.soundsLoaded = true;
@@ -167,6 +179,7 @@ class WhiteNoiseApp {
             };
             audio.play().catch(() => {
                 // 재생 실패 시 합성 사운드로 폴백
+                delete this.sounds[type];
                 this.playSynthSound(type, volume);
             });
         }
@@ -195,26 +208,26 @@ class WhiteNoiseApp {
 
     getSynthConfig(type) {
         const configs = {
-            // === 순수 노이즈 ===
+            // === 순수 노이즈 (부드럽게 조정) ===
             white: {
                 layers: [
-                    { noise: 'white', gain: 1.0, filters: [
-                        { type: 'highpass', freq: 20 },
-                        { type: 'lowpass', freq: 16000 }
+                    { noise: 'white', gain: 0.35, filters: [
+                        { type: 'highpass', freq: 100 },
+                        { type: 'lowpass', freq: 8000, Q: 0.5 }
                     ]}
                 ]
             },
             pink: {
                 layers: [
-                    { noise: 'pink', gain: 1.0, filters: [
-                        { type: 'lowpass', freq: 8000 }
+                    { noise: 'pink', gain: 0.4, filters: [
+                        { type: 'lowpass', freq: 4000, Q: 0.5 }
                     ]}
                 ]
             },
             brown: {
                 layers: [
-                    { noise: 'brown', gain: 1.0, filters: [
-                        { type: 'lowpass', freq: 800 }
+                    { noise: 'brown', gain: 0.5, filters: [
+                        { type: 'lowpass', freq: 500, Q: 0.7 }
                     ]}
                 ]
             },
@@ -402,21 +415,24 @@ class WhiteNoiseApp {
 
             switch (noiseType) {
                 case 'white':
-                    data[i] = white * 0.5;
+                    // 부드러운 백색소음 (볼륨 낮춤)
+                    data[i] = white * 0.25;
                     break;
                 case 'pink':
+                    // 부드러운 핑크노이즈 (볼륨 낮춤)
                     b0 = 0.99886 * b0 + white * 0.0555179;
                     b1 = 0.99332 * b1 + white * 0.0750759;
                     b2 = 0.96900 * b2 + white * 0.1538520;
                     b3 = 0.86650 * b3 + white * 0.3104856;
                     b4 = 0.55000 * b4 + white * 0.5329522;
                     b5 = -0.7616 * b5 - white * 0.0168980;
-                    data[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.11;
+                    data[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.07;
                     b6 = white * 0.115926;
                     break;
                 case 'brown':
+                    // 부드러운 브라운노이즈 (볼륨 낮춤)
                     lastOut = (lastOut + (0.02 * white)) / 1.02;
-                    data[i] = lastOut * 3.5;
+                    data[i] = lastOut * 2.0;
                     break;
             }
         }
