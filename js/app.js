@@ -1,24 +1,103 @@
-// 백색소음 플레이어 - 안전한 합성 사운드 버전 (API Key 없음, 상업 사용 가능)
+// 백색소음 플레이어 - Freesound API 버전
+// CC0/CC-BY 라이선스 사운드 사용 (상업적 사용 가능)
 class WhiteNoiseApp {
     constructor() {
         this.audioContext = null;
         this.sounds = {};
+        this.audioElements = {};
         this.isPlaying = false;
         this.masterVolume = 0.8;
         this.masterGain = null;
         this.timer = null;
         this.timerMinutes = 0;
         this.timerRemaining = 0;
+        
+        // Freesound API 설정
+        this.apiKey = 'bq5bEe2KHPGHWIreFsq47s06wzpNNqrbZJheH96t';
+        this.soundsLoaded = false;
+        this.soundPreviews = {};
+        
         this.init();
     }
 
     init() {
+        this.loadFreesoundPreviews();
         this.setupSoundCards();
         this.setupPresets();
         this.setupTimerControls();
         this.setupMasterControls();
         this.setupPremiumButton();
         this.registerServiceWorker();
+    }
+
+    // Freesound에서 고품질 CC0/CC-BY 사운드 프리뷰 URL 가져오기
+    async loadFreesoundPreviews() {
+        // 엄선된 Freesound ID (CC0 또는 CC-BY 라이선스)
+        const freesoundIds = {
+            rain: 346642,       // Rain on window CC0
+            thunder: 501104,    // Thunder storm CC0
+            wind: 370723,       // Wind outdoor CC0
+            forest: 509070,     // Forest ambience CC0
+            birds: 531015,      // Birds singing CC0
+            ocean: 527602,      // Ocean waves CC0
+            fire: 532281,       // Campfire CC0
+            river: 398936,      // Stream water CC0
+            waterfall: 370144,  // Waterfall CC0
+            crickets: 459285,   // Crickets night CC0
+            cafe: 456522,       // Cafe ambience CC0
+            keyboard: 417614,   // Mechanical keyboard CC0
+            train: 268903,      // Train ambience CC0
+            fan: 382928,        // Fan white noise CC0
+            aircon: 373188      // Air conditioner CC0
+        };
+
+        const loadingEl = document.createElement('div');
+        loadingEl.className = 'loading-indicator';
+        loadingEl.innerHTML = '<span>🎵 고품질 사운드 로딩 중...</span>';
+        document.querySelector('.app-header').appendChild(loadingEl);
+
+        const promises = Object.entries(freesoundIds).map(async ([type, id]) => {
+            try {
+                const response = await fetch(
+                    `https://freesound.org/apiv2/sounds/${id}/?token=${this.apiKey}`
+                );
+                if (response.ok) {
+                    const data = await response.json();
+                    this.soundPreviews[type] = {
+                        url: data.previews['preview-hq-mp3'],
+                        name: data.name,
+                        username: data.username,
+                        license: data.license
+                    };
+                    
+                    // 오디오 엘리먼트 미리 생성
+                    const audio = new Audio();
+                    audio.src = this.soundPreviews[type].url;
+                    audio.loop = true;
+                    audio.preload = 'auto';
+                    audio.volume = 0;
+                    this.audioElements[type] = audio;
+                }
+            } catch (e) {
+                console.log(`${type} 로드 실패, 합성 사운드 사용`);
+            }
+        });
+
+        await Promise.allSettled(promises);
+        
+        loadingEl.innerHTML = '<span>✅ 사운드 로드 완료</span>';
+        setTimeout(() => loadingEl.remove(), 2000);
+        
+        this.soundsLoaded = true;
+        this.updateCredits();
+    }
+
+    updateCredits() {
+        // CC-BY 저작자 표시 (프리미엄 콘텐츠에 포함)
+        this.credits = Object.entries(this.soundPreviews)
+            .filter(([_, info]) => info.license && info.license.includes('Attribution'))
+            .map(([type, info]) => `${type}: "${info.name}" by ${info.username}`)
+            .join('\n');
     }
 
     initAudioContext() {
@@ -61,24 +140,60 @@ class WhiteNoiseApp {
         });
     }
 
-    // ========================================
-    // 고급 합성 사운드 시스템 (100% 로열티 프리)
-    // ========================================
-
+    // 사운드 재생 (Freesound 우선, 합성 폴백)
     playSound(type, volume) {
-        if (this.sounds[type]) {
+        // 노이즈 타입은 항상 합성
+        if (['white', 'pink', 'brown'].includes(type)) {
+            this.playSynthSound(type, volume);
+            return;
+        }
+
+        // Freesound 오디오가 있으면 사용
+        if (this.audioElements[type]) {
+            this.playFreesound(type, volume);
+        } else {
+            // 로딩 중이거나 실패한 경우 합성 사운드
+            this.playSynthSound(type, volume);
+        }
+    }
+
+    playFreesound(type, volume) {
+        const audio = this.audioElements[type];
+        
+        if (!this.sounds[type]) {
+            this.sounds[type] = {
+                type: 'freesound',
+                audio: audio
+            };
+            audio.play().catch(() => {
+                // 재생 실패 시 합성 사운드로 폴백
+                this.playSynthSound(type, volume);
+            });
+        }
+        
+        audio.volume = volume * this.masterVolume;
+    }
+
+    playSynthSound(type, volume) {
+        if (this.sounds[type] && this.sounds[type].type === 'synth') {
             this.sounds[type].gainNode.gain.setTargetAtTime(
                 volume, this.audioContext.currentTime, 0.1
             );
             return;
         }
 
-        const config = this.getSoundConfig(type);
-        this.sounds[type] = this.createLayeredSound(config, volume);
+        // 기존 Freesound 정지
+        if (this.sounds[type] && this.sounds[type].type === 'freesound') {
+            this.sounds[type].audio.pause();
+        }
+
+        const config = this.getSynthConfig(type);
+        const synthSound = this.createLayeredSound(config, volume);
+        synthSound.type = 'synth';
+        this.sounds[type] = synthSound;
     }
 
-    getSoundConfig(type) {
-        // 모든 사운드는 100% 합성 - 상업적 사용 완전 허용
+    getSynthConfig(type) {
         const configs = {
             // === 순수 노이즈 ===
             white: {
@@ -104,224 +219,94 @@ class WhiteNoiseApp {
                 ]
             },
 
-            // === 자연 소리 (고급 합성) ===
+            // === 자연 소리 폴백 ===
             rain: {
                 layers: [
-                    // 빗방울 떨어지는 소리
-                    { noise: 'pink', gain: 0.5, filters: [
-                        { type: 'bandpass', freq: 2500, Q: 0.8 }
-                    ]},
-                    // 배경 물소리
-                    { noise: 'brown', gain: 0.3, filters: [
-                        { type: 'lowpass', freq: 400 }
-                    ], lfo: { freq: 0.1, depth: 0.2 }},
-                    // 빗방울 디테일
-                    { noise: 'white', gain: 0.25, filters: [
-                        { type: 'highpass', freq: 5000 },
-                        { type: 'lowpass', freq: 12000 }
-                    ], lfo: { freq: 0.3, depth: 0.4 }}
+                    { noise: 'pink', gain: 0.5, filters: [{ type: 'bandpass', freq: 2500, Q: 0.8 }]},
+                    { noise: 'brown', gain: 0.3, filters: [{ type: 'lowpass', freq: 400 }], lfo: { freq: 0.1, depth: 0.2 }},
+                    { noise: 'white', gain: 0.25, filters: [{ type: 'highpass', freq: 5000 }, { type: 'lowpass', freq: 12000 }], lfo: { freq: 0.3, depth: 0.4 }}
                 ]
             },
             thunder: {
                 layers: [
-                    // 깊은 울림
-                    { noise: 'brown', gain: 0.9, filters: [
-                        { type: 'lowpass', freq: 100, Q: 2 }
-                    ], lfo: { freq: 0.02, depth: 0.7 }},
-                    // 중저음
-                    { noise: 'brown', gain: 0.4, filters: [
-                        { type: 'bandpass', freq: 60, Q: 1 }
-                    ]}
+                    { noise: 'brown', gain: 0.9, filters: [{ type: 'lowpass', freq: 100, Q: 2 }], lfo: { freq: 0.02, depth: 0.7 }},
+                    { noise: 'brown', gain: 0.4, filters: [{ type: 'bandpass', freq: 60, Q: 1 }]}
                 ]
             },
             wind: {
                 layers: [
-                    // 바람 휘파람
-                    { noise: 'pink', gain: 0.5, filters: [
-                        { type: 'bandpass', freq: 500, Q: 0.3 }
-                    ], lfo: { freq: 0.06, depth: 0.5 }},
-                    // 저음 바람
-                    { noise: 'brown', gain: 0.35, filters: [
-                        { type: 'lowpass', freq: 250 }
-                    ], lfo: { freq: 0.04, depth: 0.4 }},
-                    // 고음 바람
-                    { noise: 'white', gain: 0.15, filters: [
-                        { type: 'bandpass', freq: 3000, Q: 0.5 }
-                    ], lfo: { freq: 0.1, depth: 0.6 }}
+                    { noise: 'pink', gain: 0.5, filters: [{ type: 'bandpass', freq: 500, Q: 0.3 }], lfo: { freq: 0.06, depth: 0.5 }},
+                    { noise: 'brown', gain: 0.35, filters: [{ type: 'lowpass', freq: 250 }], lfo: { freq: 0.04, depth: 0.4 }}
                 ]
             },
             forest: {
                 layers: [
-                    // 잎사귀 소리
-                    { noise: 'pink', gain: 0.4, filters: [
-                        { type: 'bandpass', freq: 1200, Q: 0.4 }
-                    ], lfo: { freq: 0.15, depth: 0.3 }},
-                    // 배경 ambient
-                    { noise: 'brown', gain: 0.2, filters: [
-                        { type: 'lowpass', freq: 300 }
-                    ]},
-                    // 공기 소리
-                    { noise: 'white', gain: 0.15, filters: [
-                        { type: 'highpass', freq: 4000 },
-                        { type: 'lowpass', freq: 8000 }
-                    ], lfo: { freq: 0.2, depth: 0.35 }}
+                    { noise: 'pink', gain: 0.4, filters: [{ type: 'bandpass', freq: 1200, Q: 0.4 }], lfo: { freq: 0.15, depth: 0.3 }},
+                    { noise: 'brown', gain: 0.2, filters: [{ type: 'lowpass', freq: 300 }]}
                 ]
             },
             birds: {
                 layers: [
-                    // 새소리 시뮬레이션 (고음)
-                    { noise: 'white', gain: 0.35, filters: [
-                        { type: 'bandpass', freq: 4500, Q: 3 }
-                    ], lfo: { freq: 0.8, depth: 0.8 }},
-                    // 배경
-                    { noise: 'pink', gain: 0.2, filters: [
-                        { type: 'bandpass', freq: 3000, Q: 1.5 }
-                    ], lfo: { freq: 0.5, depth: 0.6 }}
+                    { noise: 'white', gain: 0.35, filters: [{ type: 'bandpass', freq: 4500, Q: 3 }], lfo: { freq: 0.8, depth: 0.8 }},
+                    { noise: 'pink', gain: 0.2, filters: [{ type: 'bandpass', freq: 3000, Q: 1.5 }], lfo: { freq: 0.5, depth: 0.6 }}
                 ]
             },
             ocean: {
                 layers: [
-                    // 파도 (저음)
-                    { noise: 'brown', gain: 0.6, filters: [
-                        { type: 'lowpass', freq: 400 }
-                    ], lfo: { freq: 0.05, depth: 0.6 }},
-                    // 파도 (중음)
-                    { noise: 'pink', gain: 0.4, filters: [
-                        { type: 'bandpass', freq: 800, Q: 0.5 }
-                    ], lfo: { freq: 0.07, depth: 0.5 }},
-                    // 물거품
-                    { noise: 'white', gain: 0.2, filters: [
-                        { type: 'highpass', freq: 3000 },
-                        { type: 'lowpass', freq: 8000 }
-                    ], lfo: { freq: 0.1, depth: 0.5 }}
+                    { noise: 'brown', gain: 0.6, filters: [{ type: 'lowpass', freq: 400 }], lfo: { freq: 0.05, depth: 0.6 }},
+                    { noise: 'pink', gain: 0.4, filters: [{ type: 'bandpass', freq: 800, Q: 0.5 }], lfo: { freq: 0.07, depth: 0.5 }}
                 ]
             },
             fire: {
                 layers: [
-                    // 불꽃 터지는 소리
-                    { noise: 'pink', gain: 0.45, filters: [
-                        { type: 'bandpass', freq: 600, Q: 0.6 }
-                    ], lfo: { freq: 0.5, depth: 0.4 }},
-                    // 저음 울림
-                    { noise: 'brown', gain: 0.35, filters: [
-                        { type: 'lowpass', freq: 200 }
-                    ]},
-                    // 불꽃 디테일
-                    { noise: 'white', gain: 0.25, filters: [
-                        { type: 'bandpass', freq: 2000, Q: 0.8 }
-                    ], lfo: { freq: 0.7, depth: 0.5 }}
+                    { noise: 'pink', gain: 0.45, filters: [{ type: 'bandpass', freq: 600, Q: 0.6 }], lfo: { freq: 0.5, depth: 0.4 }},
+                    { noise: 'brown', gain: 0.35, filters: [{ type: 'lowpass', freq: 200 }]}
                 ]
             },
             river: {
                 layers: [
-                    // 물 흐르는 소리
-                    { noise: 'pink', gain: 0.5, filters: [
-                        { type: 'bandpass', freq: 1800, Q: 0.5 }
-                    ], lfo: { freq: 0.12, depth: 0.25 }},
-                    // 물 튀기는 소리
-                    { noise: 'white', gain: 0.3, filters: [
-                        { type: 'highpass', freq: 3000 },
-                        { type: 'lowpass', freq: 7000 }
-                    ], lfo: { freq: 0.18, depth: 0.35 }},
-                    // 저음 물소리
-                    { noise: 'brown', gain: 0.25, filters: [
-                        { type: 'lowpass', freq: 500 }
-                    ]}
+                    { noise: 'pink', gain: 0.5, filters: [{ type: 'bandpass', freq: 1800, Q: 0.5 }], lfo: { freq: 0.12, depth: 0.25 }},
+                    { noise: 'white', gain: 0.3, filters: [{ type: 'highpass', freq: 3000 }, { type: 'lowpass', freq: 7000 }]}
                 ]
             },
             waterfall: {
                 layers: [
-                    // 폭포 메인
-                    { noise: 'white', gain: 0.5, filters: [
-                        { type: 'bandpass', freq: 2500, Q: 0.4 }
-                    ]},
-                    // 물 충돌
-                    { noise: 'pink', gain: 0.4, filters: [
-                        { type: 'bandpass', freq: 1200, Q: 0.5 }
-                    ]},
-                    // 저음 울림
-                    { noise: 'brown', gain: 0.35, filters: [
-                        { type: 'lowpass', freq: 300 }
-                    ], lfo: { freq: 0.08, depth: 0.2 }}
+                    { noise: 'white', gain: 0.5, filters: [{ type: 'bandpass', freq: 2500, Q: 0.4 }]},
+                    { noise: 'pink', gain: 0.4, filters: [{ type: 'bandpass', freq: 1200, Q: 0.5 }]}
                 ]
             },
             crickets: {
                 layers: [
-                    // 귀뚜라미 울음 시뮬레이션
-                    { noise: 'white', gain: 0.3, filters: [
-                        { type: 'bandpass', freq: 5500, Q: 8 }
-                    ], lfo: { freq: 3, depth: 0.85 }},
-                    // 배경
-                    { noise: 'pink', gain: 0.15, filters: [
-                        { type: 'highpass', freq: 3000 },
-                        { type: 'lowpass', freq: 6000 }
-                    ], lfo: { freq: 2, depth: 0.7 }}
+                    { noise: 'white', gain: 0.3, filters: [{ type: 'bandpass', freq: 5500, Q: 8 }], lfo: { freq: 3, depth: 0.85 }}
                 ]
             },
-
-            // === 생활 소리 ===
             cafe: {
                 layers: [
-                    // 사람들 웅성거림
-                    { noise: 'pink', gain: 0.4, filters: [
-                        { type: 'bandpass', freq: 800, Q: 0.3 }
-                    ], lfo: { freq: 0.2, depth: 0.25 }},
-                    // 컵/접시 소리
-                    { noise: 'white', gain: 0.2, filters: [
-                        { type: 'bandpass', freq: 3500, Q: 1 }
-                    ], lfo: { freq: 0.4, depth: 0.5 }},
-                    // 배경
-                    { noise: 'brown', gain: 0.2, filters: [
-                        { type: 'lowpass', freq: 400 }
-                    ]}
+                    { noise: 'pink', gain: 0.4, filters: [{ type: 'bandpass', freq: 800, Q: 0.3 }], lfo: { freq: 0.2, depth: 0.25 }},
+                    { noise: 'white', gain: 0.2, filters: [{ type: 'bandpass', freq: 3500, Q: 1 }], lfo: { freq: 0.4, depth: 0.5 }}
                 ]
             },
             keyboard: {
                 layers: [
-                    // 타이핑 클릭
-                    { noise: 'white', gain: 0.35, filters: [
-                        { type: 'bandpass', freq: 3000, Q: 2 }
-                    ], lfo: { freq: 4, depth: 0.75 }},
-                    // 키보드 저음
-                    { noise: 'pink', gain: 0.2, filters: [
-                        { type: 'bandpass', freq: 800, Q: 1 }
-                    ], lfo: { freq: 3, depth: 0.6 }}
+                    { noise: 'white', gain: 0.35, filters: [{ type: 'bandpass', freq: 3000, Q: 2 }], lfo: { freq: 4, depth: 0.75 }}
                 ]
             },
             train: {
                 layers: [
-                    // 레일 리듬
-                    { noise: 'brown', gain: 0.6, filters: [
-                        { type: 'lowpass', freq: 150 }
-                    ], lfo: { freq: 1.5, depth: 0.4 }},
-                    // 철로 마찰
-                    { noise: 'pink', gain: 0.3, filters: [
-                        { type: 'bandpass', freq: 300, Q: 0.8 }
-                    ], lfo: { freq: 1.5, depth: 0.3 }}
+                    { noise: 'brown', gain: 0.6, filters: [{ type: 'lowpass', freq: 150 }], lfo: { freq: 1.5, depth: 0.4 }},
+                    { noise: 'pink', gain: 0.3, filters: [{ type: 'bandpass', freq: 300, Q: 0.8 }], lfo: { freq: 1.5, depth: 0.3 }}
                 ]
             },
             fan: {
                 layers: [
-                    // 선풍기 바람
-                    { noise: 'pink', gain: 0.6, filters: [
-                        { type: 'bandpass', freq: 180, Q: 0.4 }
-                    ], lfo: { freq: 0.02, depth: 0.1 }},
-                    // 모터 소리
-                    { noise: 'brown', gain: 0.3, filters: [
-                        { type: 'lowpass', freq: 100 }
-                    ]}
+                    { noise: 'pink', gain: 0.6, filters: [{ type: 'bandpass', freq: 180, Q: 0.4 }]},
+                    { noise: 'brown', gain: 0.3, filters: [{ type: 'lowpass', freq: 100 }]}
                 ]
             },
             aircon: {
                 layers: [
-                    // 에어컨 바람
-                    { noise: 'pink', gain: 0.55, filters: [
-                        { type: 'lowpass', freq: 400 }
-                    ]},
-                    // 콤프레서 저음
-                    { noise: 'brown', gain: 0.4, filters: [
-                        { type: 'lowpass', freq: 80 }
-                    ]}
+                    { noise: 'pink', gain: 0.55, filters: [{ type: 'lowpass', freq: 400 }]},
+                    { noise: 'brown', gain: 0.4, filters: [{ type: 'lowpass', freq: 80 }]}
                 ]
             }
         };
@@ -350,7 +335,6 @@ class WhiteNoiseApp {
     createSoundLayer(config) {
         const layer = { nodes: [] };
 
-        // 노이즈 버퍼 생성
         const bufferSize = 4 * this.audioContext.sampleRate;
         const buffer = this.audioContext.createBuffer(2, bufferSize, this.audioContext.sampleRate);
 
@@ -364,13 +348,11 @@ class WhiteNoiseApp {
         source.loop = true;
         layer.source = source;
 
-        // 레이어 게인
         const layerGain = this.audioContext.createGain();
         layerGain.gain.value = config.gain;
 
         let lastNode = source;
 
-        // 필터 체인
         if (config.filters) {
             config.filters.forEach(f => {
                 const filter = this.audioContext.createBiquadFilter();
@@ -383,7 +365,6 @@ class WhiteNoiseApp {
             });
         }
 
-        // LFO (진폭 변조)
         if (config.lfo) {
             const lfoGain = this.audioContext.createGain();
             lfoGain.gain.value = 1 - config.lfo.depth / 2;
@@ -445,17 +426,22 @@ class WhiteNoiseApp {
         const sound = this.sounds[type];
         if (!sound) return;
 
-        sound.gainNode.gain.setTargetAtTime(0, this.audioContext.currentTime, 0.3);
-
-        setTimeout(() => {
-            sound.layers.forEach(layer => {
-                try { 
-                    layer.source.stop(); 
-                    if (layer.lfo) layer.lfo.stop();
-                } catch (e) {}
-            });
-            delete this.sounds[type];
-        }, 500);
+        if (sound.type === 'freesound') {
+            sound.audio.pause();
+            sound.audio.currentTime = 0;
+        } else if (sound.type === 'synth') {
+            sound.gainNode.gain.setTargetAtTime(0, this.audioContext.currentTime, 0.3);
+            setTimeout(() => {
+                sound.layers.forEach(layer => {
+                    try { 
+                        layer.source.stop(); 
+                        if (layer.lfo) layer.lfo.stop();
+                    } catch (e) {}
+                });
+            }, 500);
+        }
+        
+        delete this.sounds[type];
     }
 
     setupPresets() {
@@ -545,6 +531,17 @@ class WhiteNoiseApp {
         slider.addEventListener('input', (e) => {
             this.masterVolume = parseInt(e.target.value) / 100;
             valueDisplay.textContent = `${e.target.value}%`;
+            
+            // Freesound 오디오 볼륨 조절
+            Object.entries(this.sounds).forEach(([type, sound]) => {
+                if (sound.type === 'freesound') {
+                    const slider = document.querySelector(`[data-sound="${type}"] .volume-slider`);
+                    const vol = parseInt(slider.value) / 100;
+                    sound.audio.volume = vol * this.masterVolume;
+                }
+            });
+            
+            // Synth 오디오 볼륨 조절
             if (this.masterGain) {
                 this.masterGain.gain.setTargetAtTime(this.masterVolume, this.audioContext.currentTime, 0.1);
             }
@@ -599,14 +596,16 @@ class WhiteNoiseApp {
     }
 
     showPremiumContent() {
+        const loadedCount = Object.keys(this.soundPreviews).length;
+        
         const tips = `🌙 수면 전문가 팁
 
 ━━━━━━━━━━━━━━━━━━━━
-✅ 라이선스 정보
+🎵 사운드 소스 정보
 
-모든 사운드는 Web Audio API로 합성됩니다.
-100% 로열티 프리 - 상업적 사용 가능
-외부 API 의존성 없음
+Freesound.org에서 제공하는 고품질 사운드
+로드된 사운드: ${loadedCount}개
+라이선스: CC0 (퍼블릭 도메인) / CC-BY
 
 ━━━━━━━━━━━━━━━━━━━━
 💤 최적의 수면 환경
@@ -641,7 +640,12 @@ ${new Date().getHours() >= 22 || new Date().getHours() < 6
     ? "🌙 수면 모드: 비 40% + 브라운 25% + 파도 20%"
     : new Date().getHours() >= 9 && new Date().getHours() < 18
     ? "🎯 집중 모드: 카페 30% + 핑크 20%"
-    : "🧘 휴식 모드: 파도 40% + 바람 25%"}`;
+    : "🧘 휴식 모드: 파도 40% + 바람 25%"}
+
+━━━━━━━━━━━━━━━━━━━━
+📜 저작자 표시 (CC-BY)
+
+${this.credits || '모든 사운드가 CC0 라이선스입니다.'}`;
 
         document.getElementById('premium-content').textContent = tips;
         document.getElementById('premium-result').classList.remove('hidden');
