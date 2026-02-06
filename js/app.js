@@ -13,7 +13,7 @@ class WhiteNoiseApp {
         this.timerRemaining = 0;
         
         // Freesound API 설정
-        this.apiKey = 'bq5bEe2KHPGHWIreFsq47s06wzpNNqrbZJheH96t';
+        this.apiKey = 'bq5bEe2KHPGHWlreFsq47s06wzpNNqrbZJheH96t';
         this.soundsLoaded = false;
         this.soundPreviews = {};
         
