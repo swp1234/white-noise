@@ -55,23 +55,23 @@ class WhiteNoiseApp {
 
     // Freesound에서 고품질 CC0/CC-BY 사운드 프리뷰 URL 가져오기
     async loadFreesoundPreviews() {
-        // 엄선된 Freesound ID (CC0 또는 CC-BY 라이선스)
+        // 엄선된 Freesound ID (CC0 라이선스, 부드럽고 편안한 사운드)
         const freesoundIds = {
-            rain: 346642,       // Rain on window CC0
-            thunder: 501104,    // Thunder storm CC0
-            wind: 370723,       // Wind outdoor CC0
-            forest: 509070,     // Forest ambience CC0
-            birds: 531015,      // Birds singing CC0
-            ocean: 527602,      // Ocean waves CC0
-            fire: 532281,       // Campfire CC0
-            river: 398936,      // Stream water CC0
-            waterfall: 370144,  // Waterfall CC0
-            crickets: 459285,   // Crickets night CC0
-            cafe: 456522,       // Cafe ambience CC0
-            keyboard: 417614,   // Mechanical keyboard CC0
-            train: 268903,      // Train ambience CC0
-            fan: 382928,        // Fan white noise CC0
-            aircon: 373188      // Air conditioner CC0
+            rain: 397636,       // Gentle suburb rain
+            thunder: 812926,    // Thunder Rumbles from Interior
+            wind: 469596,       // A minute of peace (gentle breeze)
+            forest: 474341,     // Forest birds ambient
+            birds: 327444,      // Birds Chirping on a Tree
+            ocean: 578524,      // Calm ocean waves
+            fire: 637523,       // Campfire crackling
+            river: 697495,      // Gentle Relaxing Stream
+            waterfall: 800738,  // Small Waterfall in park
+            crickets: 331444,   // Gentle cricket and insects at night
+            cafe: 437461,       // Quiet cafe chatter ambient
+            keyboard: 546165,   // Keyboard Typing (HHKB Topre)
+            train: 152584,      // London train interior calm
+            fan: 838459,        // White Noise Fan gentle
+            aircon: 234918      // Ambient low hum aircon
         };
 
         const loadingEl = document.createElement('div');
