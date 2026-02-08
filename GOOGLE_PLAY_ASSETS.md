@@ -393,7 +393,7 @@ white noise, sleep sounds, nature sounds, ASMR, focus, relaxation, rain sounds, 
 - 욕설: 없음
 
 **개인정보 처리방침**:
-- URL: https://swp1234.github.io/white-noise/privacy-policy.html
+- URL: https://dopabrain.com/white-noise/privacy-policy.html
 - 수집 정보: 없음 (로컬 저장소만 사용)
 - 외부 서버 전송: 없음 (Freesound API를 통한 오디오 스트리밍만 사용)
 
@@ -433,7 +433,7 @@ white noise, sleep sounds, nature sounds, ASMR, focus, relaxation, rain sounds, 
    - 도메인 소유권 검증
 
 3. **manifest.xml 설정**
-   - TWA URL: https://swp1234.github.io/white-noise/
+   - TWA URL: https://dopabrain.com/white-noise/
    - Theme color: #2c3e50
    - App name (각 언어별 values 폴더)
 
