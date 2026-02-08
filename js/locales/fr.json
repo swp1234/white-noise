@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "Lecteur de Bruit Blanc - Focus·Sommeil·Méditation | Mélangeur de 15 Sons Naturels",
+    "description": "Augmente la concentration et la qualité du sommeil avec 15 sons naturels incluant le bruit blanc, la pluie, les vagues de l'océan et le feu de camp! Crée ton mélange sonore parfait avec la fonction de mélangeur."
+  },
+  "header": {
+    "title": "Bruit Blanc",
+    "subtitle": "Focus · Sommeil · Méditation"
+  },
+  "timer": {
+    "15min": "15 min",
+    "30min": "30 min",
+    "1hour": "1 heure",
+    "infinite": "Infini"
+  },
+  "sounds": {
+    "nature": "Sons Naturels",
+    "noise": "Bruit Blanc & Bruit",
+    "ambient": "Sons Ambiants",
+    "rain": "Pluie",
+    "thunder": "Tonnerre",
+    "wind": "Vent",
+    "forest": "Forêt",
+    "birds": "Oiseaux",
+    "ocean": "Océan",
+    "fire": "Feu",
+    "river": "Rivière",
+    "waterfall": "Cascade",
+    "crickets": "Grillons",
+    "white": "Bruit Blanc",
+    "pink": "Bruit Rose",
+    "brown": "Bruit Marron",
+    "cafe": "Café",
+    "keyboard": "Clavier",
+    "train": "Train",
+    "fan": "Ventilateur",
+    "aircon": "Climatiseur"
+  },
+  "presets": {
+    "title": "Présets Recommandés",
+    "sleep": "Sommeil",
+    "focus": "Focus",
+    "relax": "Détente",
+    "nature": "Nature"
+  },
+  "master": {
+    "volume": "Volume"
+  },
+  "buttons": {
+    "premium": "Conseils de Sommeil & Analyse",
+    "adTag": "ANNONCE"
+  },
+  "recommendations": "Essaie aussi",
+  "usage": {
+    "title": "📊 Mon Historique d'Utilisation"
+  },
+  "premium": {
+    "badge": "✨ Conseils d'Experts du Sommeil"
+  },
+  "ads": {
+    "label": "Annonce",
+    "banner": "Zone Publicitaire",
+    "closeBtn": "Fermer"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "White Noise Player - Konzentration·Schlaf·Meditation | 15 Natürliche Sounds Mixer",
+    "description": "Verbessere Konzentration und Schlafqualität mit 15 natürlichen Sounds einschließlich Weißrauschen, Regen, Meereswellen und Lagerfeuer! Erstelle deine perfekte Sound-Mischung mit der Mixer-Funktion."
+  },
+  "header": {
+    "title": "Weißrauschen",
+    "subtitle": "Konzentration · Schlaf · Meditation"
+  },
+  "timer": {
+    "15min": "15 Min",
+    "30min": "30 Min",
+    "1hour": "1 Stunde",
+    "infinite": "Unendlich"
+  },
+  "sounds": {
+    "nature": "Natürliche Sounds",
+    "noise": "Weißrauschen & Rauschen",
+    "ambient": "Umgebungs-Sounds",
+    "rain": "Regen",
+    "thunder": "Donner",
+    "wind": "Wind",
+    "forest": "Wald",
+    "birds": "Vögel",
+    "ocean": "Ozean",
+    "fire": "Feuer",
+    "river": "Fluss",
+    "waterfall": "Wasserfall",
+    "crickets": "Grillen",
+    "white": "Weißrauschen",
+    "pink": "Rosa-Rauschen",
+    "brown": "Braun-Rauschen",
+    "cafe": "Café",
+    "keyboard": "Tastatur",
+    "train": "Zug",
+    "fan": "Ventilator",
+    "aircon": "Klimaanlage"
+  },
+  "presets": {
+    "title": "Empfehlenswerte Voreinstellungen",
+    "sleep": "Schlaf",
+    "focus": "Konzentration",
+    "relax": "Entspannung",
+    "nature": "Natur"
+  },
+  "master": {
+    "volume": "Lautstärke"
+  },
+  "buttons": {
+    "premium": "Schlaf-Tipps & Analyse",
+    "adTag": "ANZEIGE"
+  },
+  "recommendations": "Probiere auch diese",
+  "usage": {
+    "title": "📊 Mein Verwendungsverlauf"
+  },
+  "premium": {
+    "badge": "✨ Schlaf-Expertin-Tipps"
+  },
+  "ads": {
+    "label": "Anzeige",
+    "banner": "Anzeigenbereich",
+    "closeBtn": "Schließen"
+  }
+}

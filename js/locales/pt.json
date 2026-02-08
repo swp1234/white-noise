@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "Reprodutor de Ruído Branco - Foco, Sono, Meditação | 15 Misturador de Sons Naturais",
+    "description": "Impulsione foco e qualidade do sono com 15 sons naturais incluindo ruído branco, chuva, ondas do oceano e fogo de acampamento! Crie sua mistura de som perfeita com o recurso de misturador."
+  },
+  "header": {
+    "title": "Ruído Branco",
+    "subtitle": "Foco · Sono · Meditação"
+  },
+  "timer": {
+    "15min": "15 min",
+    "30min": "30 min",
+    "1hour": "1 hora",
+    "infinite": "Infinito"
+  },
+  "sounds": {
+    "nature": "Sons Naturais",
+    "noise": "Ruído Branco e Ruído",
+    "ambient": "Sons Ambientes",
+    "rain": "Chuva",
+    "thunder": "Trovão",
+    "wind": "Vento",
+    "forest": "Floresta",
+    "birds": "Pássaros",
+    "ocean": "Oceano",
+    "fire": "Fogo",
+    "river": "Rio",
+    "waterfall": "Cachoeira",
+    "crickets": "Grilos",
+    "white": "Ruído Branco",
+    "pink": "Ruído Rosa",
+    "brown": "Ruído Marrom",
+    "cafe": "Café",
+    "keyboard": "Teclado",
+    "train": "Trem",
+    "fan": "Ventilador",
+    "aircon": "Ar Condicionado"
+  },
+  "presets": {
+    "title": "Predefinições Recomendadas",
+    "sleep": "Sono",
+    "focus": "Foco",
+    "relax": "Relax",
+    "nature": "Natureza"
+  },
+  "master": {
+    "volume": "Volume"
+  },
+  "buttons": {
+    "premium": "Dicas de Sono e Análise",
+    "adTag": "ANÚNCIO"
+  },
+  "recommendations": "Experimente também",
+  "usage": {
+    "title": "📊 Meu Histórico de Uso"
+  },
+  "premium": {
+    "badge": "✨ Dicas de Especialista em Sono"
+  },
+  "ads": {
+    "label": "Anúncio",
+    "banner": "Área de Anúncio",
+    "closeBtn": "Fechar"
+  }
+}

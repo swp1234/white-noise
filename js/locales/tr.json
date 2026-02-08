@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "Beyaz Gürültü Oynatıcı - Odaklanma·Uyku·Meditasyon | 15 Doğal Ses Karıştırıcı",
+    "description": "Beyaz gürültü, yağmur, okyanus dalgaları ve ateş dahil 15 doğal sesle odaklanmayı ve uyku kalitesini arttır! Karıştırıcı özelliği ile mükemmel ses mix'ini oluştur."
+  },
+  "header": {
+    "title": "Beyaz Gürültü",
+    "subtitle": "Odaklanma · Uyku · Meditasyon"
+  },
+  "timer": {
+    "15min": "15 dk",
+    "30min": "30 dk",
+    "1hour": "1 saat",
+    "infinite": "Sınırsız"
+  },
+  "sounds": {
+    "nature": "Doğal Sesler",
+    "noise": "Beyaz Gürültü & Gürültü",
+    "ambient": "Ortam Sesleri",
+    "rain": "Yağmur",
+    "thunder": "Gök Gürültüsü",
+    "wind": "Rüzgar",
+    "forest": "Orman",
+    "birds": "Kuşlar",
+    "ocean": "Okyanus",
+    "fire": "Ateş",
+    "river": "Nehir",
+    "waterfall": "Şelale",
+    "crickets": "Cırcır Böcekleri",
+    "white": "Beyaz Gürültü",
+    "pink": "Pembe Gürültü",
+    "brown": "Kahverengi Gürültü",
+    "cafe": "Kafe",
+    "keyboard": "Klavye",
+    "train": "Tren",
+    "fan": "Fan",
+    "aircon": "Klima"
+  },
+  "presets": {
+    "title": "Önerilen Hazır Ayarlar",
+    "sleep": "Uyku",
+    "focus": "Odaklanma",
+    "relax": "Rahatla",
+    "nature": "Doğa"
+  },
+  "master": {
+    "volume": "Ses Seviyesi"
+  },
+  "buttons": {
+    "premium": "Uyku İpuçları & Analizi",
+    "adTag": "REKLAM"
+  },
+  "recommendations": "Bunları da Dene",
+  "usage": {
+    "title": "📊 Benim Kullanım Geçmişi"
+  },
+  "premium": {
+    "badge": "✨ Uyku Uzmanı İpuçları"
+  },
+  "ads": {
+    "label": "Reklam",
+    "banner": "Reklam Alanı",
+    "closeBtn": "Kapat"
+  }
+}

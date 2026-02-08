@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "Pemutar White Noise - Fokus·Tidur·Meditasi | 15 Mixer Suara Alami",
+    "description": "Tingkatkan fokus dan kualitas tidur dengan 15 suara alami termasuk white noise, hujan, gelombang laut, dan api unggun! Buat campuran suara sempurna Anda dengan fitur mixer."
+  },
+  "header": {
+    "title": "White Noise",
+    "subtitle": "Fokus · Tidur · Meditasi"
+  },
+  "timer": {
+    "15min": "15 menit",
+    "30min": "30 menit",
+    "1hour": "1 jam",
+    "infinite": "Tak Terbatas"
+  },
+  "sounds": {
+    "nature": "Suara Alami",
+    "noise": "White Noise & Bising",
+    "ambient": "Suara Ambient",
+    "rain": "Hujan",
+    "thunder": "Guntur",
+    "wind": "Angin",
+    "forest": "Hutan",
+    "birds": "Burung",
+    "ocean": "Laut",
+    "fire": "Api",
+    "river": "Sungai",
+    "waterfall": "Air Terjun",
+    "crickets": "Jangkrik",
+    "white": "White Noise",
+    "pink": "Pink Noise",
+    "brown": "Brown Noise",
+    "cafe": "Kafe",
+    "keyboard": "Keyboard",
+    "train": "Kereta",
+    "fan": "Kipas",
+    "aircon": "Penyejuk Udara"
+  },
+  "presets": {
+    "title": "Preset yang Direkomendasikan",
+    "sleep": "Tidur",
+    "focus": "Fokus",
+    "relax": "Santai",
+    "nature": "Alam"
+  },
+  "master": {
+    "volume": "Volume"
+  },
+  "buttons": {
+    "premium": "Tips Tidur & Analisis",
+    "adTag": "IKLAN"
+  },
+  "recommendations": "Coba Juga",
+  "usage": {
+    "title": "📊 Riwayat Penggunaan Saya"
+  },
+  "premium": {
+    "badge": "✨ Tips Ahli Tidur"
+  },
+  "ads": {
+    "label": "Iklan",
+    "banner": "Area Iklan",
+    "closeBtn": "Tutup"
+  }
+}

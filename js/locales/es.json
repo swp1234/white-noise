@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "Reproductor de Ruido Blanco - Enfoque·Sueño·Meditación | 15 Sonidos Naturales Mezclador",
+    "description": "¡Aumenta el enfoque y la calidad del sueño con 15 sonidos naturales incluyendo ruido blanco, lluvia, olas oceánicas y fuego de campamento! Crea tu mezcla de sonido perfecta con la función de mezclador."
+  },
+  "header": {
+    "title": "Ruido Blanco",
+    "subtitle": "Enfoque · Sueño · Meditación"
+  },
+  "timer": {
+    "15min": "15 min",
+    "30min": "30 min",
+    "1hour": "1 hora",
+    "infinite": "Infinito"
+  },
+  "sounds": {
+    "nature": "Sonidos Naturales",
+    "noise": "Ruido Blanco y Ruido",
+    "ambient": "Sonidos Ambientales",
+    "rain": "Lluvia",
+    "thunder": "Trueno",
+    "wind": "Viento",
+    "forest": "Bosque",
+    "birds": "Pájaros",
+    "ocean": "Océano",
+    "fire": "Fuego",
+    "river": "Río",
+    "waterfall": "Cascada",
+    "crickets": "Grillos",
+    "white": "Ruido Blanco",
+    "pink": "Ruido Rosa",
+    "brown": "Ruido Marrón",
+    "cafe": "Café",
+    "keyboard": "Teclado",
+    "train": "Tren",
+    "fan": "Ventilador",
+    "aircon": "Aire Acondicionado"
+  },
+  "presets": {
+    "title": "Preajustes Recomendados",
+    "sleep": "Sueño",
+    "focus": "Enfoque",
+    "relax": "Relajación",
+    "nature": "Naturaleza"
+  },
+  "master": {
+    "volume": "Volumen"
+  },
+  "buttons": {
+    "premium": "Consejos de Sueño y Análisis",
+    "adTag": "ANUNCIO"
+  },
+  "recommendations": "Prueba Estos También",
+  "usage": {
+    "title": "📊 Mi Historial de Uso"
+  },
+  "premium": {
+    "badge": "✨ Consejos de Experto en Sueño"
+  },
+  "ads": {
+    "label": "Anuncio",
+    "banner": "Área de Anuncios",
+    "closeBtn": "Cerrar"
+  }
+}

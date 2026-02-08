@@ -22,12 +22,15 @@ class WhiteNoiseApp {
 
     init() {
         this.loadSavedSettings();
+        this.loadSessionStats();
         this.loadFreesoundPreviews();
         this.setupSoundCards();
         this.setupPresets();
         this.setupTimerControls();
         this.setupMasterControls();
         this.setupPremiumButton();
+        this.startSessionTracking();
+        this.renderUsageStats();
         this.registerServiceWorker();
     }
 
@@ -692,6 +695,83 @@ ${this.credits || '모든 사운드가 CC0 라이선스입니다.'}`;
         document.getElementById('premium-content').textContent = tips;
         document.getElementById('premium-result').classList.remove('hidden');
         document.getElementById('premium-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // 세션 통계
+    loadSessionStats() {
+        try {
+            this.sessionStats = JSON.parse(localStorage.getItem('whitenoise_stats') || '{}');
+            if (!this.sessionStats.totalSessions) {
+                this.sessionStats = {
+                    totalSessions: 0,
+                    totalMinutes: 0,
+                    streak: 0,
+                    lastDate: null,
+                    favPreset: {}
+                };
+            }
+        } catch (e) {
+            this.sessionStats = { totalSessions: 0, totalMinutes: 0, streak: 0, lastDate: null, favPreset: {} };
+        }
+    }
+
+    saveSessionStats() {
+        try {
+            localStorage.setItem('whitenoise_stats', JSON.stringify(this.sessionStats));
+        } catch (e) {}
+    }
+
+    startSessionTracking() {
+        this.sessionStartTime = null;
+
+        // 재생 시작/정지 시 세션 추적
+        const origPlay = this.isPlaying;
+        const self = this;
+
+        // 매분 사용 시간 기록
+        setInterval(() => {
+            if (Object.keys(self.sounds).length > 0) {
+                if (!self.sessionStartTime) {
+                    self.sessionStartTime = Date.now();
+                    self.sessionStats.totalSessions++;
+
+                    // 연속일 체크
+                    const today = new Date().toDateString();
+                    if (self.sessionStats.lastDate !== today) {
+                        const yesterday = new Date();
+                        yesterday.setDate(yesterday.getDate() - 1);
+                        if (self.sessionStats.lastDate === yesterday.toDateString()) {
+                            self.sessionStats.streak++;
+                        } else if (self.sessionStats.lastDate) {
+                            self.sessionStats.streak = 1;
+                        } else {
+                            self.sessionStats.streak = 1;
+                        }
+                        self.sessionStats.lastDate = today;
+                    }
+                }
+                self.sessionStats.totalMinutes++;
+                self.saveSessionStats();
+                self.renderUsageStats();
+            } else {
+                self.sessionStartTime = null;
+            }
+        }, 60000);
+    }
+
+    renderUsageStats() {
+        const container = document.getElementById('usage-stats');
+        if (!container) return;
+
+        const hours = Math.floor(this.sessionStats.totalMinutes / 60);
+        const mins = this.sessionStats.totalMinutes % 60;
+        const timeStr = hours > 0 ? `${hours}시간 ${mins}분` : `${mins}분`;
+
+        container.innerHTML = `
+            <div class="usage-stat"><span class="usage-value">${this.sessionStats.totalSessions}</span><span class="usage-label">세션</span></div>
+            <div class="usage-stat"><span class="usage-value">${timeStr}</span><span class="usage-label">총 사용</span></div>
+            <div class="usage-stat"><span class="usage-value">${this.sessionStats.streak || 0}</span><span class="usage-label">연속일</span></div>
+        `;
     }
 
     registerServiceWorker() {

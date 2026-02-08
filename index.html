@@ -47,11 +47,18 @@
     <div class="language-selector">
         <button class="lang-btn" id="langBtn" title="Language">🌐</button>
         <div class="lang-menu hidden" id="langMenu">
-            <button class="lang-option active" data-lang="ko">한국어</button>
-            <button class="lang-option" data-lang="en">English</button>
-            <button class="lang-option" data-lang="zh">简体中文</button>
-            <button class="lang-option" data-lang="hi">हिन्दी</button>
-            <button class="lang-option" data-lang="ru">Русский</button>
+            <button class="lang-option active" data-lang="ko">🇰🇷 한국어</button>
+            <button class="lang-option" data-lang="en">🇺🇸 English</button>
+            <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+            <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+            <button class="lang-option" data-lang="pt">🇧🇷 Português</button>
+            <button class="lang-option" data-lang="zh">🇨🇳 简体中文</button>
+            <button class="lang-option" data-lang="id">🇮🇩 Bahasa Indonesia</button>
+            <button class="lang-option" data-lang="tr">🇹🇷 Türkçe</button>
+            <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+            <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+            <button class="lang-option" data-lang="hi">🇮🇳 हिन्दी</button>
+            <button class="lang-option" data-lang="ru">🇷🇺 Русский</button>
         </div>
     </div>
     <div class="app-container">
@@ -83,52 +90,52 @@
                 <div class="sound-grid" id="sound-grid">
                     <div class="sound-card" data-sound="rain">
                         <div class="sound-icon">🌧️</div>
-                        <div class="sound-name">비</div>
+                        <div class="sound-name" data-i18n="sounds.rain">비</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="thunder">
                         <div class="sound-icon">⛈️</div>
-                        <div class="sound-name">천둥</div>
+                        <div class="sound-name" data-i18n="sounds.thunder">천둥</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="wind">
                         <div class="sound-icon">💨</div>
-                        <div class="sound-name">바람</div>
+                        <div class="sound-name" data-i18n="sounds.wind">바람</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="forest">
                         <div class="sound-icon">🌲</div>
-                        <div class="sound-name">숲</div>
+                        <div class="sound-name" data-i18n="sounds.forest">숲</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="birds">
                         <div class="sound-icon">🐦</div>
-                        <div class="sound-name">새소리</div>
+                        <div class="sound-name" data-i18n="sounds.birds">새소리</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="ocean">
                         <div class="sound-icon">🌊</div>
-                        <div class="sound-name">파도</div>
+                        <div class="sound-name" data-i18n="sounds.ocean">파도</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="fire">
                         <div class="sound-icon">🔥</div>
-                        <div class="sound-name">모닥불</div>
+                        <div class="sound-name" data-i18n="sounds.fire">모닥불</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="river">
                         <div class="sound-icon">🏞️</div>
-                        <div class="sound-name">시냇물</div>
+                        <div class="sound-name" data-i18n="sounds.river">시냇물</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="waterfall">
                         <div class="sound-icon">💧</div>
-                        <div class="sound-name">폭포</div>
+                        <div class="sound-name" data-i18n="sounds.waterfall">폭포</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="crickets">
                         <div class="sound-icon">🦗</div>
-                        <div class="sound-name">귀뚜라미</div>
+                        <div class="sound-name" data-i18n="sounds.crickets">귀뚜라미</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                 </div>
@@ -137,17 +144,17 @@
                 <div class="sound-grid">
                     <div class="sound-card" data-sound="white">
                         <div class="sound-icon">⬜</div>
-                        <div class="sound-name">백색소음</div>
+                        <div class="sound-name" data-i18n="sounds.white">백색소음</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="pink">
                         <div class="sound-icon">🩷</div>
-                        <div class="sound-name">핑크노이즈</div>
+                        <div class="sound-name" data-i18n="sounds.pink">핑크노이즈</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="brown">
                         <div class="sound-icon">🟫</div>
-                        <div class="sound-name">브라운노이즈</div>
+                        <div class="sound-name" data-i18n="sounds.brown">브라운노이즈</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                 </div>
@@ -156,27 +163,27 @@
                 <div class="sound-grid">
                     <div class="sound-card" data-sound="cafe">
                         <div class="sound-icon">☕</div>
-                        <div class="sound-name">카페</div>
+                        <div class="sound-name" data-i18n="sounds.cafe">카페</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="keyboard">
                         <div class="sound-icon">⌨️</div>
-                        <div class="sound-name">키보드</div>
+                        <div class="sound-name" data-i18n="sounds.keyboard">키보드</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="train">
                         <div class="sound-icon">🚂</div>
-                        <div class="sound-name">기차</div>
+                        <div class="sound-name" data-i18n="sounds.train">기차</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="fan">
                         <div class="sound-icon">🌀</div>
-                        <div class="sound-name">선풍기</div>
+                        <div class="sound-name" data-i18n="sounds.fan">선풍기</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="aircon">
                         <div class="sound-icon">❄️</div>
-                        <div class="sound-name">에어컨</div>
+                        <div class="sound-name" data-i18n="sounds.aircon">에어컨</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                 </div>
@@ -188,19 +195,19 @@
                 <div class="preset-grid">
                     <button class="preset-btn" data-preset="sleep">
                         <span class="preset-icon">😴</span>
-                        <span class="preset-name">수면</span>
+                        <span class="preset-name" data-i18n="presets.sleep">수면</span>
                     </button>
                     <button class="preset-btn" data-preset="focus">
                         <span class="preset-icon">🎯</span>
-                        <span class="preset-name">집중</span>
+                        <span class="preset-name" data-i18n="presets.focus">집중</span>
                     </button>
                     <button class="preset-btn" data-preset="relax">
                         <span class="preset-icon">🧘</span>
-                        <span class="preset-name">명상</span>
+                        <span class="preset-name" data-i18n="presets.relax">명상</span>
                     </button>
                     <button class="preset-btn" data-preset="nature">
                         <span class="preset-icon">🌳</span>
-                        <span class="preset-name">자연</span>
+                        <span class="preset-name" data-i18n="presets.nature">자연</span>
                     </button>
                 </div>
             </section>
@@ -217,18 +224,24 @@
                 </button>
             </section>
 
+            <!-- 사용 통계 -->
+            <section class="usage-stats-section">
+                <h3 class="section-subtitle" data-i18n="usage.title">📊 나의 사용 기록</h3>
+                <div class="usage-stats-grid" id="usage-stats"></div>
+            </section>
+
             <!-- 프리미엄 기능 -->
             <section class="premium-section">
-                <button class="premium-btn" id="premium-btn" data-i18n="buttons.premium">
+                <button class="premium-btn" id="premium-btn">
                     <span class="premium-icon">✨</span>
-                    수면 분석 & 팁 보기
+                    <span data-i18n="buttons.premium">수면 분석 & 팁 보기</span>
                     <span class="ad-tag" data-i18n="buttons.adTag">AD</span>
                 </button>
             </section>
 
             <!-- 프리미엄 결과 -->
             <div class="result-card premium-result hidden" id="premium-result">
-                <div class="premium-badge">✨ 수면 전문가 팁</div>
+                <div class="premium-badge" data-i18n="premium.badge">✨ 수면 전문가 팁</div>
                 <div id="premium-content"></div>
             </div>
 
@@ -271,9 +284,9 @@
         <!-- 전면 광고 모달 -->
         <div class="interstitial-ad hidden" id="interstitial-ad">
             <div class="ad-content">
-                <p>광고</p>
-                <div class="ad-placeholder">광고 영역</div>
-                <button id="close-ad" disabled>닫기 (<span id="countdown">5</span>)</button>
+                <p data-i18n="ads.label">광고</p>
+                <div class="ad-placeholder" data-i18n="ads.banner">광고 영역</div>
+                <button id="close-ad" disabled><span data-i18n="ads.closeBtn">닫기</span> (<span id="countdown">5</span>)</button>
             </div>
         </div>
 

@@ -50,5 +50,16 @@
     "premium": "Sleep Tips & Analysis",
     "adTag": "AD"
   },
-  "recommendations": "Try These Too"
+  "recommendations": "Try These Too",
+  "usage": {
+    "title": "📊 My Usage History"
+  },
+  "premium": {
+    "badge": "✨ Sleep Expert Tips"
+  },
+  "ads": {
+    "label": "Ad",
+    "banner": "Ad Area",
+    "closeBtn": "Close"
+  }
 }
