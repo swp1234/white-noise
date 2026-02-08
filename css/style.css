@@ -594,6 +594,28 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* Game Footer & Back Link */
+.game-footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.back-link, .home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 12px 0;
+    transition: color 0.2s;
+}
+
+.back-link:hover, .home-link:hover {
+    color: rgba(255,255,255,0.7);
+}
+
 /* 반응형 */
 @media (max-width: 400px) {
     .sound-grid {
