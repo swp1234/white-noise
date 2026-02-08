@@ -1,0 +1,54 @@
+{
+  "app": {
+    "title": "White Noise Player - Focus·Sleep·Meditation | 15 Natural Sounds Mixer",
+    "description": "Boost focus and sleep quality with 15 natural sounds including white noise, rain, ocean waves, and campfire! Create your perfect sound mix with the mixer feature."
+  },
+  "header": {
+    "title": "White Noise",
+    "subtitle": "Focus · Sleep · Meditation"
+  },
+  "timer": {
+    "15min": "15 min",
+    "30min": "30 min",
+    "1hour": "1 hour",
+    "infinite": "Infinite"
+  },
+  "sounds": {
+    "nature": "Natural Sounds",
+    "noise": "White Noise & Noise",
+    "ambient": "Ambient Sounds",
+    "rain": "Rain",
+    "thunder": "Thunder",
+    "wind": "Wind",
+    "forest": "Forest",
+    "birds": "Birds",
+    "ocean": "Ocean",
+    "fire": "Fire",
+    "river": "River",
+    "waterfall": "Waterfall",
+    "crickets": "Crickets",
+    "white": "White Noise",
+    "pink": "Pink Noise",
+    "brown": "Brown Noise",
+    "cafe": "Cafe",
+    "keyboard": "Keyboard",
+    "train": "Train",
+    "fan": "Fan",
+    "aircon": "Air Conditioner"
+  },
+  "presets": {
+    "title": "Recommended Presets",
+    "sleep": "Sleep",
+    "focus": "Focus",
+    "relax": "Relax",
+    "nature": "Nature"
+  },
+  "master": {
+    "volume": "Volume"
+  },
+  "buttons": {
+    "premium": "Sleep Tips & Analysis",
+    "adTag": "AD"
+  },
+  "recommendations": "Try These Too"
+}

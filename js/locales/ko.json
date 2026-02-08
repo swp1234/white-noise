@@ -1,0 +1,54 @@
+{
+  "app": {
+    "title": "백색소음 플레이어 - 집중·수면·명상 | 15가지 자연 소리 믹서",
+    "description": "백색소음, 빗소리, 파도, 모닥불 등 15가지 자연 소리로 집중력과 수면의 질을 높이세요! 믹서 기능으로 나만의 완벽한 사운드 조합 생성."
+  },
+  "header": {
+    "title": "백색소음",
+    "subtitle": "집중 · 수면 · 명상"
+  },
+  "timer": {
+    "15min": "15분",
+    "30min": "30분",
+    "1hour": "1시간",
+    "infinite": "무한"
+  },
+  "sounds": {
+    "nature": "자연 소리",
+    "noise": "백색소음 & 노이즈",
+    "ambient": "생활 소리",
+    "rain": "비",
+    "thunder": "천둥",
+    "wind": "바람",
+    "forest": "숲",
+    "birds": "새소리",
+    "ocean": "파도",
+    "fire": "모닥불",
+    "river": "시냇물",
+    "waterfall": "폭포",
+    "crickets": "귀뚜라미",
+    "white": "백색소음",
+    "pink": "핑크노이즈",
+    "brown": "브라운노이즈",
+    "cafe": "카페",
+    "keyboard": "키보드",
+    "train": "기차",
+    "fan": "선풍기",
+    "aircon": "에어컨"
+  },
+  "presets": {
+    "title": "추천 프리셋",
+    "sleep": "수면",
+    "focus": "집중",
+    "relax": "명상",
+    "nature": "자연"
+  },
+  "master": {
+    "volume": "볼륨"
+  },
+  "buttons": {
+    "premium": "수면 분석 & 팁 보기",
+    "adTag": "AD"
+  },
+  "recommendations": "이것도 해보세요"
+}

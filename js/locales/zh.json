@@ -1,0 +1,54 @@
+{
+  "app": {
+    "title": "白噪声播放器 - 专注·睡眠·冥想 | 15种自然声音混音器",
+    "description": "用15种自然声音（包括白噪声、雨声、海浪声和篝火声）提高专注力和睡眠质量！使用混音器功能创建完美的声音组合。"
+  },
+  "header": {
+    "title": "白噪声",
+    "subtitle": "专注 · 睡眠 · 冥想"
+  },
+  "timer": {
+    "15min": "15分钟",
+    "30min": "30分钟",
+    "1hour": "1小时",
+    "infinite": "无限"
+  },
+  "sounds": {
+    "nature": "自然声音",
+    "noise": "白噪声 & 噪音",
+    "ambient": "环境声音",
+    "rain": "雨",
+    "thunder": "雷声",
+    "wind": "风",
+    "forest": "森林",
+    "birds": "鸟鸣",
+    "ocean": "海浪",
+    "fire": "篝火",
+    "river": "河流",
+    "waterfall": "瀑布",
+    "crickets": "蟋蟀",
+    "white": "白噪声",
+    "pink": "粉红噪声",
+    "brown": "褐色噪声",
+    "cafe": "咖啡馆",
+    "keyboard": "键盘",
+    "train": "火车",
+    "fan": "风扇",
+    "aircon": "空调"
+  },
+  "presets": {
+    "title": "推荐预设",
+    "sleep": "睡眠",
+    "focus": "专注",
+    "relax": "放松",
+    "nature": "自然"
+  },
+  "master": {
+    "volume": "音量"
+  },
+  "buttons": {
+    "premium": "睡眠分析 & 提示",
+    "adTag": "广告"
+  },
+  "recommendations": "也试试这些"
+}
