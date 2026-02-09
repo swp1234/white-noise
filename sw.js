@@ -1,12 +1,12 @@
 const CACHE_NAME = 'white-noise-v1';
 const urlsToCache = [
-    './',
-    './index.html',
-    './css/style.css',
-    './js/app.js',
-    './manifest.json',
-    './icon-192.svg',
-    './icon-512.svg'
+    '/',
+    '/index.html',
+    '/css/style.css',
+    '/js/app.js',
+    '/manifest.json',
+    '/icon-192.svg',
+    '/icon-512.svg'
 ];
 
 self.addEventListener('install', event => {
