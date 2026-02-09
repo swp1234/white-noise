@@ -61,5 +61,8 @@
     "label": "विज्ञापन",
     "banner": "विज्ञापन क्षेत्र",
     "closeBtn": "बंद करें"
+  },
+  "game": {
+    "back": "DopaBrain Home"
   }
 }

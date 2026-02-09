@@ -61,5 +61,8 @@
     "label": "Iklan",
     "banner": "Area Iklan",
     "closeBtn": "Tutup"
+  },
+  "game": {
+    "back": "DopaBrain Home"
   }
 }

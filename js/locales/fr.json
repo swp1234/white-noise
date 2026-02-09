@@ -61,5 +61,8 @@
     "label": "Annonce",
     "banner": "Zone Publicitaire",
     "closeBtn": "Fermer"
+  },
+  "game": {
+    "back": "DopaBrain Home"
   }
 }

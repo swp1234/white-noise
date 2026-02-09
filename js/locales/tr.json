@@ -61,5 +61,8 @@
     "label": "Reklam",
     "banner": "Reklam Alanı",
     "closeBtn": "Kapat"
+  },
+  "game": {
+    "back": "DopaBrain Home"
   }
 }

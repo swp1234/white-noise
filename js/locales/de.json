@@ -61,5 +61,8 @@
     "label": "Anzeige",
     "banner": "Anzeigenbereich",
     "closeBtn": "Schließen"
+  },
+  "game": {
+    "back": "DopaBrain Home"
   }
 }

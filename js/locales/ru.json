@@ -61,5 +61,8 @@
     "label": "Объявление",
     "banner": "Область объявлений",
     "closeBtn": "Закрыть"
+  },
+  "game": {
+    "back": "DopaBrain Home"
   }
 }
