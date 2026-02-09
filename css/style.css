@@ -714,6 +714,171 @@ body {
     color: rgba(255,255,255,0.7);
 }
 
+/* Cross-Promo Section (detox-timer 연동) */
+.cross-promo-section {
+    margin: 24px 0 20px;
+    padding: 0 5px;
+}
+
+.promo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, rgba(93, 109, 126, 0.2) 0%, rgba(155, 89, 182, 0.15) 100%);
+    border: 2px solid rgba(155, 89, 182, 0.3);
+    border-radius: 16px;
+    text-decoration: none;
+    color: #c39bd3;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 56px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.promo-link:hover {
+    border-color: #d7bde2;
+    background: linear-gradient(135deg, rgba(93, 109, 126, 0.3) 0%, rgba(155, 89, 182, 0.25) 100%);
+    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.2);
+    transform: translateY(-2px);
+}
+
+.promo-link:active {
+    transform: scale(0.98);
+}
+
+.promo-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.promo-text {
+    flex: 1;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.promo-arrow {
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.promo-link:hover .promo-arrow {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* 사운드 카드 개선 - 선택 시 확실한 피드백 */
+.sound-card {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sound-card.active {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.3) 0%, rgba(155, 89, 182, 0.1) 100%);
+    border: 2px solid rgba(155, 89, 182, 0.4);
+    box-shadow: 0 8px 25px rgba(155, 89, 182, 0.2);
+    transform: translateY(-4px) scale(1.02);
+}
+
+.sound-card .volume-slider {
+    height: 44px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+.sound-card .volume-slider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #9b59b6;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(155, 89, 182, 0.3);
+}
+
+.sound-card .volume-slider::-webkit-slider-thumb:hover {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 4px 12px rgba(155, 89, 182, 0.5);
+}
+
+.sound-card .volume-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #9b59b6;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(155, 89, 182, 0.3);
+    border: none;
+}
+
+.sound-card .volume-slider::-moz-range-thumb:hover {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 4px 12px rgba(155, 89, 182, 0.5);
+}
+
+/* 크로스 프로모션 개선 */
+.rec-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rec-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(93, 109, 126, 0.1);
+    border: 1px solid rgba(155, 89, 182, 0.2);
+    border-radius: 14px;
+    text-decoration: none;
+    color: #d8e0ea;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 60px;
+}
+
+.rec-card:hover {
+    background: rgba(155, 89, 182, 0.15);
+    border-color: rgba(155, 89, 182, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15);
+}
+
+.rec-card:active {
+    transform: scale(0.98);
+}
+
+.rec-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.rec-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.rec-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+}
+
+.rec-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+}
+
 /* 반응형 */
 @media (max-width: 400px) {
     .sound-grid {
@@ -726,5 +891,17 @@ body {
 
     .timer-display {
         font-size: 2.5rem;
+    }
+
+    .promo-text {
+        font-size: 0.85rem;
+    }
+
+    .rec-name {
+        font-size: 12px;
+    }
+
+    .rec-desc {
+        font-size: 10px;
     }
 }

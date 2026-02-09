@@ -61,5 +61,8 @@
     "label": "Ad",
     "banner": "Ad Area",
     "closeBtn": "Close"
+  },
+  "game": {
+    "back": "DopaBrain Home"
   }
 }

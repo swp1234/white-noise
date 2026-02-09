@@ -61,5 +61,8 @@
     "label": "广告",
     "banner": "广告区域",
     "closeBtn": "关闭"
+  },
+  "game": {
+    "back": "DopaBrain 首页"
   }
 }

@@ -61,5 +61,8 @@
     "label": "광고",
     "banner": "광고 영역",
     "closeBtn": "닫기"
+  },
+  "game": {
+    "back": "DopaBrain 홈"
   }
 }
