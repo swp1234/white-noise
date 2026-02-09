@@ -1,5 +1,5 @@
-// 백색소음 플레이어 - Freesound API 버전
-// CC0/CC-BY 라이선스 사운드 사용 (상업적 사용 가능)
+// 백색소음 플레이어 - Web Audio API 합성 사운드 버전
+// 로컬 합성 사운드만 사용 (외부 API 의존도 없음)
 class WhiteNoiseApp {
     constructor() {
         this.audioContext = null;
