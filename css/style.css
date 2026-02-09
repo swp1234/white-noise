@@ -929,3 +929,34 @@ button,a[href],input[type="button"],input[type="submit"],[role="button"]{min-wid
 @media (prefers-reduced-motion: reduce){*{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}}
 @media (prefers-contrast: more){button{border:2px solid #2c3e50;}}
 .rec-card:focus-visible,.sound-btn:focus-visible{outline:3px solid #2c3e50;outline-offset:4px;}
+
+/* Selection Color */
+::selection {
+    background: #5d6d7e;
+    color: white;
+}
+
+::-moz-selection {
+    background: #5d6d7e;
+    color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark, var(--bg-primary, var(--background, #0f0f23)));
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5d6d7e;
+    border-radius: 5px;
+    border: 2px solid var(--bg-dark, var(--bg-primary, var(--background, #0f0f23)));
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7d8a97;
+    opacity: 0.8;
+}
