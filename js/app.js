@@ -21,17 +21,21 @@ class WhiteNoiseApp {
     }
 
     init() {
-        this.loadSavedSettings();
-        this.loadSessionStats();
-        this.loadFreesoundPreviews();
-        this.setupSoundCards();
-        this.setupPresets();
-        this.setupTimerControls();
-        this.setupMasterControls();
-        this.setupPremiumButton();
-        this.startSessionTracking();
-        this.renderUsageStats();
-        this.registerServiceWorker();
+        try {
+            this.loadSavedSettings();
+            this.loadSessionStats();
+            this.loadFreesoundPreviews();
+            this.setupSoundCards();
+            this.setupPresets();
+            this.setupTimerControls();
+            this.setupMasterControls();
+            this.setupPremiumButton();
+            this.startSessionTracking();
+            this.renderUsageStats();
+            this.registerServiceWorker();
+        } catch (e) {
+            console.error('앱 초기화 오류:', e);
+        }
     }
 
     // 저장된 설정 불러오기
@@ -761,16 +765,16 @@ ${this.credits || '모든 사운드가 CC0 라이선스입니다.'}`;
 
     renderUsageStats() {
         const container = document.getElementById('usage-stats');
-        if (!container) return;
+        if (!container || !this.sessionStats) return;
 
-        const hours = Math.floor(this.sessionStats.totalMinutes / 60);
-        const mins = this.sessionStats.totalMinutes % 60;
+        const hours = Math.floor((this.sessionStats?.totalMinutes || 0) / 60);
+        const mins = (this.sessionStats?.totalMinutes || 0) % 60;
         const timeStr = hours > 0 ? `${hours}시간 ${mins}분` : `${mins}분`;
 
         container.innerHTML = `
-            <div class="usage-stat"><span class="usage-value">${this.sessionStats.totalSessions}</span><span class="usage-label">세션</span></div>
+            <div class="usage-stat"><span class="usage-value">${this.sessionStats?.totalSessions || 0}</span><span class="usage-label">세션</span></div>
             <div class="usage-stat"><span class="usage-value">${timeStr}</span><span class="usage-label">총 사용</span></div>
-            <div class="usage-stat"><span class="usage-value">${this.sessionStats.streak || 0}</span><span class="usage-label">연속일</span></div>
+            <div class="usage-stat"><span class="usage-value">${this.sessionStats?.streak || 0}</span><span class="usage-label">연속일</span></div>
         `;
     }
 
