@@ -11,12 +11,12 @@ class WhiteNoiseApp {
         this.timer = null;
         this.timerMinutes = 0;
         this.timerRemaining = 0;
-        
-        // Freesound API 설정
-        this.apiKey = 'bq5bEe2KHPGHWlreFsq47s06wzpNNqrbZJheH96t';
-        this.soundsLoaded = false;
-        this.soundPreviews = {};
-        
+
+        // Freesound API는 제거 - 모든 사운드는 브라우저 합성(Web Audio API)으로 처리
+        // 서드파티 API 의존도 제거로 보안 및 안정성 향상
+        this.soundsLoaded = true;  // 합성 사운드는 항상 로드됨
+        this.soundPreviews = {};   // 외부 사운드는 사용하지 않음
+
         this.init();
     }
 
@@ -60,86 +60,17 @@ class WhiteNoiseApp {
         } catch (e) {}
     }
 
-    // Freesound에서 고품질 CC0/CC-BY 사운드 프리뷰 URL 가져오기
+    // 합성 사운드만 사용 (Web Audio API)
+    // 보안: 외부 API 의존도 제거, 네트워크 요청 최소화
     async loadFreesoundPreviews() {
-        // 엄선된 Freesound ID (CC0 라이선스, 부드럽고 편안한 사운드)
-        const freesoundIds = {
-            rain: 397636,       // Gentle suburb rain
-            thunder: 812926,    // Thunder Rumbles from Interior
-            wind: 469596,       // A minute of peace (gentle breeze)
-            forest: 474341,     // Forest birds ambient
-            birds: 327444,      // Birds Chirping on a Tree
-            ocean: 578524,      // Calm ocean waves
-            fire: 637523,       // Campfire crackling
-            river: 697495,      // Gentle Relaxing Stream
-            waterfall: 800738,  // Small Waterfall in park
-            crickets: 331444,   // Gentle cricket and insects at night
-            cafe: 437461,       // Quiet cafe chatter ambient
-            keyboard: 546165,   // Keyboard Typing (HHKB Topre)
-            train: 152584,      // London train interior calm
-            fan: 838459,        // White Noise Fan gentle
-            aircon: 234918      // Ambient low hum aircon
-        };
-
-        const loadingEl = document.createElement('div');
-        loadingEl.className = 'loading-indicator';
-        loadingEl.innerHTML = '<span>🎵 고품질 사운드 로딩 중...</span>';
-        document.querySelector('.app-header').appendChild(loadingEl);
-
-        const promises = Object.entries(freesoundIds).map(async ([type, id]) => {
-            try {
-                const response = await fetch(
-                    `https://freesound.org/apiv2/sounds/${id}/?token=${this.apiKey}`
-                );
-                if (response.ok) {
-                    const data = await response.json();
-                    
-                    if (!data.previews || !data.previews['preview-hq-mp3']) {
-                        return;
-                    }
-                    
-                    this.soundPreviews[type] = {
-                        url: data.previews['preview-hq-mp3'],
-                        name: data.name,
-                        username: data.username,
-                        license: data.license
-                    };
-                    
-                    // 오디오 엘리먼트 미리 생성
-                    const audio = new Audio();
-                    audio.crossOrigin = 'anonymous';
-                    audio.src = this.soundPreviews[type].url;
-                    audio.loop = true;
-                    audio.preload = 'auto';
-                    audio.volume = 0;
-                    this.audioElements[type] = audio;
-                }
-            } catch (e) {
-                console.log(`${type} 로드 실패, 합성 사운드 사용`);
-            }
-        });
-
-        await Promise.allSettled(promises);
-        
-        const loadedCount = Object.keys(this.soundPreviews).length;
-        
-        if (loadedCount === 0) {
-            loadingEl.innerHTML = '<span>⚠️ 합성 사운드 사용 중</span>';
-        } else {
-            loadingEl.innerHTML = `<span>✅ ${loadedCount}개 사운드 로드 완료</span>`;
-        }
-        setTimeout(() => loadingEl.remove(), 2000);
-        
+        // 합성 사운드는 즉시 로드됨 (네트워크 요청 없음)
         this.soundsLoaded = true;
         this.updateCredits();
     }
 
     updateCredits() {
-        // CC-BY 저작자 표시 (프리미엄 콘텐츠에 포함)
-        this.credits = Object.entries(this.soundPreviews)
-            .filter(([_, info]) => info.license && info.license.includes('Attribution'))
-            .map(([type, info]) => `${type}: "${info.name}" by ${info.username}`)
-            .join('\n');
+        // 모든 사운드가 Web Audio API 합성이므로 외부 저작자 표시 불필요
+        this.credits = '모든 사운드는 브라우저 합성 사운드입니다.';
     }
 
     initAudioContext() {
@@ -182,39 +113,10 @@ class WhiteNoiseApp {
         });
     }
 
-    // 사운드 재생 (Freesound 우선, 합성 폴백)
+    // 사운드 재생 (모두 합성 사운드)
     playSound(type, volume) {
-        // 노이즈 타입은 항상 합성
-        if (['white', 'pink', 'brown'].includes(type)) {
-            this.playSynthSound(type, volume);
-            return;
-        }
-
-        // Freesound 오디오가 있으면 사용
-        if (this.audioElements[type]) {
-            this.playFreesound(type, volume);
-        } else {
-            // 로딩 중이거나 실패한 경우 합성 사운드
-            this.playSynthSound(type, volume);
-        }
-    }
-
-    playFreesound(type, volume) {
-        const audio = this.audioElements[type];
-        
-        if (!this.sounds[type]) {
-            this.sounds[type] = {
-                type: 'freesound',
-                audio: audio
-            };
-            audio.play().catch(() => {
-                // 재생 실패 시 합성 사운드로 폴백
-                delete this.sounds[type];
-                this.playSynthSound(type, volume);
-            });
-        }
-        
-        audio.volume = volume * this.masterVolume;
+        // 모든 사운드 타입에 합성 사운드(Web Audio API) 사용
+        this.playSynthSound(type, volume);
     }
 
     playSynthSound(type, volume) {
@@ -469,21 +371,19 @@ class WhiteNoiseApp {
         const sound = this.sounds[type];
         if (!sound) return;
 
-        if (sound.type === 'freesound') {
-            sound.audio.pause();
-            sound.audio.currentTime = 0;
-        } else if (sound.type === 'synth') {
+        // 모든 사운드는 합성 사운드
+        if (sound.type === 'synth') {
             sound.gainNode.gain.setTargetAtTime(0, this.audioContext.currentTime, 0.3);
             setTimeout(() => {
                 sound.layers.forEach(layer => {
-                    try { 
-                        layer.source.stop(); 
+                    try {
+                        layer.source.stop();
                         if (layer.lfo) layer.lfo.stop();
                     } catch (e) {}
                 });
             }, 500);
         }
-        
+
         delete this.sounds[type];
     }
 
@@ -580,17 +480,8 @@ class WhiteNoiseApp {
             this.masterVolume = parseInt(e.target.value) / 100;
             valueDisplay.textContent = `${e.target.value}%`;
             this.saveSettings();
-            
-            // Freesound 오디오 볼륨 조절
-            Object.entries(this.sounds).forEach(([type, sound]) => {
-                if (sound.type === 'freesound') {
-                    const slider = document.querySelector(`[data-sound="${type}"] .volume-slider`);
-                    const vol = parseInt(slider.value) / 100;
-                    sound.audio.volume = vol * this.masterVolume;
-                }
-            });
-            
-            // Synth 오디오 볼륨 조절
+
+            // 합성 오디오 볼륨 조절
             if (this.masterGain) {
                 this.masterGain.gain.setTargetAtTime(this.masterVolume, this.audioContext.currentTime, 0.1);
             }
@@ -645,16 +536,14 @@ class WhiteNoiseApp {
     }
 
     showPremiumContent() {
-        const loadedCount = Object.keys(this.soundPreviews).length;
-        
         const tips = `🌙 수면 전문가 팁
 
 ━━━━━━━━━━━━━━━━━━━━
-🎵 사운드 소스 정보
+🎵 사운드 기술
 
-Freesound.org에서 제공하는 고품질 사운드
-로드된 사운드: ${loadedCount}개
-라이선스: CC0 (퍼블릭 도메인) / CC-BY
+고급 Web Audio API 합성 사운드
+안정적이고 빠른 오프라인 플레이
+완벽하게 커스터마이징 가능
 
 ━━━━━━━━━━━━━━━━━━━━
 💤 최적의 수면 환경
@@ -692,9 +581,10 @@ ${new Date().getHours() >= 22 || new Date().getHours() < 6
     : "🧘 휴식 모드: 파도 40% + 바람 25%"}
 
 ━━━━━━━━━━━━━━━━━━━━
-📜 저작자 표시 (CC-BY)
+📜 라이선스
 
-${this.credits || '모든 사운드가 CC0 라이선스입니다.'}`;
+모든 사운드는 전적으로 클라이언트 사이드에서 합성됩니다.
+외부 콘텐츠 의존도 없음 - 완전한 오프라인 지원`;
 
         document.getElementById('premium-content').textContent = tips;
         document.getElementById('premium-result').classList.remove('hidden');
@@ -771,11 +661,29 @@ ${this.credits || '모든 사운드가 CC0 라이선스입니다.'}`;
         const mins = (this.sessionStats?.totalMinutes || 0) % 60;
         const timeStr = hours > 0 ? `${hours}시간 ${mins}분` : `${mins}분`;
 
-        container.innerHTML = `
-            <div class="usage-stat"><span class="usage-value">${this.sessionStats?.totalSessions || 0}</span><span class="usage-label">세션</span></div>
-            <div class="usage-stat"><span class="usage-value">${timeStr}</span><span class="usage-label">총 사용</span></div>
-            <div class="usage-stat"><span class="usage-value">${this.sessionStats?.streak || 0}</span><span class="usage-label">연속일</span></div>
-        `;
+        // 안전한 DOM 생성 (innerHTML 대신 createElement 사용)
+        container.innerHTML = '';
+
+        const createStat = (value, label) => {
+            const div = document.createElement('div');
+            div.className = 'usage-stat';
+
+            const valueSpan = document.createElement('span');
+            valueSpan.className = 'usage-value';
+            valueSpan.textContent = value;
+
+            const labelSpan = document.createElement('span');
+            labelSpan.className = 'usage-label';
+            labelSpan.textContent = label;
+
+            div.appendChild(valueSpan);
+            div.appendChild(labelSpan);
+            return div;
+        };
+
+        container.appendChild(createStat(this.sessionStats?.totalSessions || 0, '세션'));
+        container.appendChild(createStat(timeStr, '총 사용'));
+        container.appendChild(createStat(this.sessionStats?.streak || 0, '연속일'));
     }
 
     registerServiceWorker() {
