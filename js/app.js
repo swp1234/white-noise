@@ -34,7 +34,7 @@ class WhiteNoiseApp {
             this.renderUsageStats();
             this.registerServiceWorker();
         } catch (e) {
-            console.error('앱 초기화 오류:', e);
+            console.error('App initialization error:', e);
         }
     }
 
@@ -70,7 +70,7 @@ class WhiteNoiseApp {
 
     updateCredits() {
         // 모든 사운드가 Web Audio API 합성이므로 외부 저작자 표시 불필요
-        this.credits = '모든 사운드는 브라우저 합성 사운드입니다.';
+        this.credits = window.i18n?.t('credits.synthesized') || 'All sounds are browser-synthesized.';
     }
 
     initAudioContext() {
