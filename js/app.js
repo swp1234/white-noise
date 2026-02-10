@@ -693,4 +693,13 @@ ${new Date().getHours() >= 22 || new Date().getHours() < 6
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => new WhiteNoiseApp());
+document.addEventListener('DOMContentLoaded', () => {
+    new WhiteNoiseApp();
+
+    // Hide app loader
+    const loader = document.getElementById('app-loader');
+    if (loader) {
+        loader.classList.add('hidden');
+        setTimeout(() => loader.remove(), 300);
+    }
+});
