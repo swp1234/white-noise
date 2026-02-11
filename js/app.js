@@ -22,6 +22,7 @@ class WhiteNoiseApp {
 
     init() {
         try {
+            this.initTheme();
             this.loadSavedSettings();
             this.loadSessionStats();
             this.loadFreesoundPreviews();
@@ -33,8 +34,18 @@ class WhiteNoiseApp {
             this.startSessionTracking();
             this.renderUsageStats();
             this.registerServiceWorker();
+            this.setupThemeToggle();
         } catch (e) {
             console.error('App initialization error:', e);
+        }
+    }
+
+    initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
         }
     }
 
