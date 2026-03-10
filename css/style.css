@@ -51,6 +51,15 @@ input[type="text"], textarea {
     justify-content: center;
 }
 
+[data-theme="light"] {
+    --text-primary: #1a1a2e;
+    --text-secondary: #5a5a70;
+    --bg-dark: #f0f2f5;
+    --bg-card: rgba(93, 109, 126, 0.08);
+    --glass: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.06);
+}
+
 [data-theme="light"] .theme-toggle {
     background: rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.1);
