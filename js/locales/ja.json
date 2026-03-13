@@ -64,5 +64,12 @@
   },
   "game": {
     "back": "DopaBrain Home"
+  },
+  "related": {
+    "title": "もっと楽しむ",
+    "detoxTimer": "デトックスタイマー",
+    "affirmation": "アファメーション",
+    "stressCheck": "ストレスチェック",
+    "pomodoroTimer": "ポモドーロタイマー"
   }
 }

@@ -64,5 +64,12 @@
   },
   "game": {
     "back": "DopaBrain Home"
+  },
+  "related": {
+    "title": "और खोजें",
+    "detoxTimer": "डिटॉक्स टाइमर",
+    "affirmation": "सकारात्मक पुष्टि",
+    "stressCheck": "स्ट्रेस चेक",
+    "pomodoroTimer": "पोमोडोरो टाइमर"
   }
 }

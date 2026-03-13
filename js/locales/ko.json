@@ -64,5 +64,12 @@
   },
   "game": {
     "back": "DopaBrain 홈"
+  },
+  "related": {
+    "title": "더 많은 콘텐츠",
+    "detoxTimer": "디톡스 타이머",
+    "affirmation": "긍정 확언",
+    "stressCheck": "스트레스 체크",
+    "pomodoroTimer": "뽀모도로 타이머"
   }
 }

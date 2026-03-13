@@ -64,5 +64,12 @@
   },
   "game": {
     "back": "DopaBrain Home"
+  },
+  "related": {
+    "title": "Daha fazla keşfet",
+    "detoxTimer": "Detoks zamanlayıcı",
+    "affirmation": "Olumlamalar",
+    "stressCheck": "Stres testi",
+    "pomodoroTimer": "Pomodoro zamanlayıcı"
   }
 }

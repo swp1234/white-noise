@@ -64,5 +64,12 @@
   },
   "game": {
     "back": "DopaBrain Home"
+  },
+  "related": {
+    "title": "Explora más",
+    "detoxTimer": "Temporizador detox",
+    "affirmation": "Afirmaciones",
+    "stressCheck": "Test de estrés",
+    "pomodoroTimer": "Temporizador Pomodoro"
   }
 }

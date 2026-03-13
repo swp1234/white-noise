@@ -64,5 +64,12 @@
   },
   "game": {
     "back": "DopaBrain 首页"
+  },
+  "related": {
+    "title": "探索更多",
+    "detoxTimer": "排毒计时器",
+    "affirmation": "正念肯定",
+    "stressCheck": "压力检测",
+    "pomodoroTimer": "番茄钟"
   }
 }

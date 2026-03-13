@@ -64,5 +64,12 @@
   },
   "game": {
     "back": "DopaBrain Home"
+  },
+  "related": {
+    "title": "À découvrir",
+    "detoxTimer": "Minuteur détox",
+    "affirmation": "Affirmations",
+    "stressCheck": "Test de stress",
+    "pomodoroTimer": "Minuteur Pomodoro"
   }
 }

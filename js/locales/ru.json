@@ -64,5 +64,12 @@
   },
   "game": {
     "back": "DopaBrain Home"
+  },
+  "related": {
+    "title": "Ещё интересное",
+    "detoxTimer": "Таймер детокса",
+    "affirmation": "Аффирмации",
+    "stressCheck": "Тест на стресс",
+    "pomodoroTimer": "Таймер Помодоро"
   }
 }
