@@ -50,6 +50,18 @@ class WhiteNoiseApp {
     }
 
     // 저장된 설정 불러오기
+    setupThemeToggle() {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (!themeToggle) return;
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            const next = current === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+            themeToggle.textContent = next === 'light' ? '\u2600' : '\u263E';
+        });
+    }
+
     loadSavedSettings() {
         try {
             const saved = localStorage.getItem('whitenoise_settings');
