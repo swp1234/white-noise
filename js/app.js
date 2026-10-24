@@ -527,35 +527,9 @@ class WhiteNoiseApp {
     }
 
     setupPremiumButton() {
-        document.getElementById('premium-btn').addEventListener('click', () => {
-            this.showAd(() => this.showPremiumContent());
+        document.getElementById('premium-btn')?.addEventListener('click', () => {
+            this.showPremiumContent();
         });
-    }
-
-    showAd(callback) {
-        const modal = document.getElementById('interstitial-ad');
-        const btn = document.getElementById('close-ad');
-        const countdown = document.getElementById('countdown');
-
-        modal.classList.remove('hidden');
-        btn.disabled = true;
-        let sec = 5;
-        countdown.textContent = sec;
-
-        const timer = setInterval(() => {
-            sec--;
-            countdown.textContent = sec;
-            if (sec <= 0) {
-                clearInterval(timer);
-                btn.disabled = false;
-                btn.textContent = '닫기';
-                btn.onclick = () => {
-                    modal.classList.add('hidden');
-                    btn.textContent = '닫기 (5)';
-                    callback();
-                };
-            }
-        }, 1000);
     }
 
     showPremiumContent() {
