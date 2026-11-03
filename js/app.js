@@ -35,6 +35,7 @@ class WhiteNoiseApp {
             this.renderUsageStats();
             this.registerServiceWorker();
             this.setupThemeToggle();
+            initRelatedFunnels();
         } catch (e) {
             console.error('App initialization error:', e);
         }
@@ -700,3 +701,34 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => loader.remove(), 300);
     }
 });
+
+
+// Funnel bridge & language preservation
+function initRelatedFunnels() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang') || (window.i18n ? window.i18n.currentLang : 'ko') || 'ko';
+    const base = (window.location.origin && window.location.origin !== 'null') ? window.location.origin : 'https://dopabrain.com';
+    document.querySelectorAll('.related-grid a').forEach(link => {
+        const baseHref = link.getAttribute('data-base-href') || link.getAttribute('href');
+        if (!baseHref || baseHref.startsWith('http') || baseHref.startsWith('#')) return;
+        try {
+            const url = new URL(baseHref, base);
+            url.searchParams.set('lang', lang);
+            if (!url.searchParams.has('source')) url.searchParams.set('source', 'white_noise_result');
+            link.setAttribute('href', url.pathname + url.search);
+        } catch(e) {}
+        if (!link.dataset.trackedCta) {
+            link.dataset.trackedCta = 'true';
+            link.addEventListener('click', () => {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'content_cta_click', {
+                        cta_surface: 'white_noise_related',
+                        destination: link.getAttribute('href'),
+                        source: 'white_noise',
+                        lang: lang
+                    });
+                }
+            });
+        }
+    });
+}
