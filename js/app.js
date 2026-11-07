@@ -533,60 +533,56 @@ class WhiteNoiseApp {
         });
     }
 
-    showPremiumContent() {
-        const tips = `🌙 수면 전문가 팁
+        showPremiumContent() {
+        const h = new Date().getHours();
+        const currentLang = (window.i18n ? window.i18n.currentLang : 'ko') || 'ko';
+        const timeStr = new Date().toLocaleTimeString(currentLang);
+        const modeText = (h >= 22 || h < 6)
+            ? (window.i18n ? window.i18n.t('premium.modeSleep') : '🌙 Night Mode: Rain 40% + Brown 25% + Ocean 20%')
+            : (h >= 9 && h < 18)
+            ? (window.i18n ? window.i18n.t('premium.modeFocus') : '🎯 Focus Mode: Cafe 30% + Pink 20%')
+            : (window.i18n ? window.i18n.t('premium.modeRelax') : '🧘 Relax Mode: Ocean 40% + Wind 25%');
 
-━━━━━━━━━━━━━━━━━━━━
-🎵 사운드 기술
-
-고급 Web Audio API 합성 사운드
-안정적이고 빠른 오프라인 플레이
-완벽하게 커스터마이징 가능
-
-━━━━━━━━━━━━━━━━━━━━
-💤 최적의 수면 환경
-
-1. 온도: 18-22°C
-2. 조명: 취침 1시간 전 조도 낮추기
-3. 소음: 일정한 배경음으로 돌발 소음 차단
-4. 습도: 40-60% 유지
-
-━━━━━━━━━━━━━━━━━━━━
-🎵 소리별 효과
-
-🟫 브라운노이즈: 깊은 수면에 최적
-🩷 핑크노이즈: 기억력 향상, 얕은 수면 개선
-🌧️ 비: 스트레스 감소
-🌊 파도: 명상, 심박수 안정
-🔥 모닥불: 원초적 안정감
-
-━━━━━━━━━━━━━━━━━━━━
-🔬 권장 조합
-
-😴 수면: 비 40% + 브라운 25% + 파도 20%
-🎯 집중: 카페 30% + 핑크 20%
-🧘 명상: 파도 40% + 바람 25%
-
-━━━━━━━━━━━━━━━━━━━━
-📊 현재 시간 기준 추천
-
-${new Date().toLocaleTimeString('ko-KR')}
-
-${new Date().getHours() >= 22 || new Date().getHours() < 6
-    ? "🌙 수면 모드: 비 40% + 브라운 25% + 파도 20%"
-    : new Date().getHours() >= 9 && new Date().getHours() < 18
-    ? "🎯 집중 모드: 카페 30% + 핑크 20%"
-    : "🧘 휴식 모드: 파도 40% + 바람 25%"}
-
-━━━━━━━━━━━━━━━━━━━━
-📜 라이선스
-
-모든 사운드는 전적으로 클라이언트 사이드에서 합성됩니다.
-외부 콘텐츠 의존도 없음 - 완전한 오프라인 지원`;
-
-        document.getElementById('premium-content').textContent = tips;
-        document.getElementById('premium-result').classList.remove('hidden');
-        document.getElementById('premium-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const container = document.getElementById('premium-content');
+        if (container) {
+            container.innerHTML = `
+                <div class="premium-section-block">
+                    <h4>🎵 <span>${window.i18n ? window.i18n.t('premium.soundTechTitle') : 'Sound Technology'}</span></h4>
+                    <p>${window.i18n ? window.i18n.t('premium.soundTechDesc') : 'Web Audio API synthesis'}</p>
+                </div>
+                <div class="premium-section-block">
+                    <h4>💤 <span>${window.i18n ? window.i18n.t('premium.environmentTitle') : 'Optimal Sleep Environment'}</span></h4>
+                    <p>${window.i18n ? window.i18n.t('premium.envTemp') : '1. Temperature: 18-22°C'}</p>
+                    <p>${window.i18n ? window.i18n.t('premium.envLight') : '2. Lighting: Dim 1h before bed'}</p>
+                    <p>${window.i18n ? window.i18n.t('premium.envNoise') : '3. Noise: Continuous masking'}</p>
+                    <p>${window.i18n ? window.i18n.t('premium.envHumidity') : '4. Humidity: 40-60%'}</p>
+                </div>
+                <div class="premium-section-block">
+                    <h4>🎵 <span>${window.i18n ? window.i18n.t('premium.effectsTitle') : 'Sound Benefits'}</span></h4>
+                    <p>${window.i18n ? window.i18n.t('premium.effectBrown') : 'Brown Noise: Deep sleep'}</p>
+                    <p>${window.i18n ? window.i18n.t('premium.effectPink') : 'Pink Noise: Memory & focus'}</p>
+                    <p>${window.i18n ? window.i18n.t('premium.effectRain') : 'Rain: Stress reduction'}</p>
+                    <p>${window.i18n ? window.i18n.t('premium.effectOcean') : 'Ocean: Heart rate relaxation'}</p>
+                    <p>${window.i18n ? window.i18n.t('premium.effectFire') : 'Campfire: Cozy grounding'}</p>
+                </div>
+                <div class="premium-section-block">
+                    <h4>🔬 <span>${window.i18n ? window.i18n.t('premium.recommendedTitle') : 'Recommended Blends'}</span></h4>
+                    <p>${window.i18n ? window.i18n.t('premium.blendSleep') : 'Sleep: Rain 40% + Brown 25% + Ocean 20%'}</p>
+                    <p>${window.i18n ? window.i18n.t('premium.blendFocus') : 'Focus: Cafe 30% + Pink 20%'}</p>
+                    <p>${window.i18n ? window.i18n.t('premium.blendMeditate') : 'Meditation: Ocean 40% + Wind 25%'}</p>
+                </div>
+                <div class="premium-section-block">
+                    <h4>📊 <span>${window.i18n ? window.i18n.t('premium.timeTitle') : 'Real-Time Recommendation'}</span></h4>
+                    <p class="premium-time-clock">${timeStr}</p>
+                    <p class="premium-time-mode"><strong>${modeText}</strong></p>
+                </div>
+            `;
+        }
+        const resultCard = document.getElementById('premium-result');
+        if (resultCard) {
+            resultCard.classList.remove('hidden');
+            resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
 
     // 세션 통계
@@ -706,15 +702,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // Funnel bridge & language preservation
 function initRelatedFunnels() {
     const urlParams = new URLSearchParams(window.location.search);
-    const lang = urlParams.get('lang') || (window.i18n ? window.i18n.currentLang : 'ko') || 'ko';
+    const lang = (window.i18n ? window.i18n.currentLang : null) || urlParams.get('lang') || 'ko';
     const base = (window.location.origin && window.location.origin !== 'null') ? window.location.origin : 'https://dopabrain.com';
-    document.querySelectorAll('.related-grid a').forEach(link => {
+    document.querySelectorAll('.related-grid a, a.promo-link').forEach(link => {
         const baseHref = link.getAttribute('data-base-href') || link.getAttribute('href');
         if (!baseHref || baseHref.startsWith('http') || baseHref.startsWith('#')) return;
         try {
             const url = new URL(baseHref, base);
-            url.searchParams.set('lang', lang);
-            if (!url.searchParams.has('source')) url.searchParams.set('source', 'white_noise_result');
+            if (lang) {
+                url.searchParams.set('lang', lang);
+            }
+            if (!url.searchParams.has('source')) {
+                url.searchParams.set('source', link.classList.contains('promo-link') ? 'white_noise_cross_promo' : 'white_noise_result');
+            }
             link.setAttribute('href', url.pathname + url.search);
         } catch(e) {}
         if (!link.dataset.trackedCta) {
@@ -722,7 +722,7 @@ function initRelatedFunnels() {
             link.addEventListener('click', () => {
                 if (typeof gtag === 'function') {
                     gtag('event', 'content_cta_click', {
-                        cta_surface: 'white_noise_related',
+                        cta_surface: link.classList.contains('promo-link') ? 'white_noise_cross_promo' : 'white_noise_related',
                         destination: link.getAttribute('href'),
                         source: 'white_noise',
                         lang: lang

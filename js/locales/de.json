@@ -55,7 +55,28 @@
     "title": "📊 Mein Verwendungsverlauf"
   },
   "premium": {
-    "badge": "✨ Schlaf-Expertin-Tipps"
+    "badge": "✨ Schlafexperten-Tipps",
+    "soundTechTitle": "Klangsynthese-Technologie",
+    "soundTechDesc": "Reine Web-Audio-API-Synthese im Browser. Keine Latenz, keine externen Streams, 100% offline fähig.",
+    "environmentTitle": "Optimale Schlafumgebung",
+    "envTemp": "1. Raumtemperatur: 18–22°C",
+    "envLight": "2. Beleuchtung: 1 Std. vor dem Schlaf dimmen",
+    "envNoise": "3. Lärm: Gleichmäßige Maskierung gegen Geräuschspitzen",
+    "envHumidity": "4. Luftfeuchtigkeit: 40–60% beibehalten",
+    "effectsTitle": "Vorteile der Frequenzen",
+    "effectBrown": "🟫 Braunes Rauschen: Tiefe Deltaschlaf-Förderung & Ruhe",
+    "effectPink": "🩷 Rosa Rauschen: Gedächtniskonsolidierung & Schlafruhe",
+    "effectRain": "🌧️ Regen: Parasympathikus-Aktivierung & Stressabbau",
+    "effectOcean": "🌊 Meereswellen: Pulsstabilisierung & Meditation",
+    "effectFire": "🔥 Lagerfeuer: Geborgenheit & beruhigende Wärme",
+    "recommendedTitle": "Wissenschaftliche Klangmischungen",
+    "blendSleep": "😴 Schlaf: Regen 40% + Braunes Rauschen 25% + Wellen 20%",
+    "blendFocus": "🎯 Fokus: Café 30% + Rosa Rauschen 20%",
+    "blendMeditate": "🧘 Meditation: Wellen 40% + Wind 25%",
+    "timeTitle": "Empfehlung basierend auf der aktuellen Uhrzeit",
+    "modeSleep": "🌙 Nacht-Schlafmodus: Regen 40% + Braunes Rauschen 25% + Wellen 20%",
+    "modeFocus": "🎯 Tages-Fokusmodus: Café 30% + Rosa Rauschen 20%",
+    "modeRelax": "🧘 Entspannungsmodus: Wellen 40% + Wind 25%"
   },
   "ads": {
     "label": "Anzeige",
@@ -71,5 +92,37 @@
     "affirmation": "Affirmationen",
     "stressCheck": "Stresstest",
     "pomodoroTimer": "Pomodoro-Timer"
+  },
+  "promo": {
+    "detox": "Zusammen mit Digitalem Detox nutzen"
+  },
+  "guide": {
+    "aboutTitle": "Klangspektrum-Wissenschaft & Schlafprotokolle",
+    "disclaimer": "Dieser Player ist ein Wellness- und Bildungswerkzeug. Er ersetzt keine medizinische Behandlung bei chronischer Schlaflosigkeit oder Tinnitus.",
+    "physicsTitle": "Akustische Physik & Frequenzspektren",
+    "physicsDesc": "Akustisches Rauschen wird durch die spektrale Leistungsdichte (PSD) im hörbaren Bereich (20 Hz bis 20.000 Hz) charakterisiert. Die Formel P(f) = 1/f^α bestimmt die Klangwärme.",
+    "whiteTitle": "Weißes Rauschen (α = 0):",
+    "whiteDesc": "Gleiche Energie auf allen Frequenzen. Maskiert unregelmäßige Störgeräusche effektiv.",
+    "pinkTitle": "Rosa Rauschen (α = 1):",
+    "pinkDesc": "Leistungsabfall von 3 dB pro Oktave. Fördert Tiefschlaf und Gedächtniskonsolidierung.",
+    "brownTitle": "Braunes Rauschen (α = 2):",
+    "brownDesc": "Abfall um 6 dB pro Oktave. Warme, tiefe Frequenzen für tiefe Entspannung.",
+    "mechanismsTitle": "Neurologische Wirkungsweisen",
+    "maskingTitle": "Auditive Maskierung:",
+    "maskingDesc": "Glättet akustische Kontraste und verhindert plötzliche Weckreize im Gehirn.",
+    "resonanceTitle": "Stochastische Resonanz & Fokus:",
+    "resonanceDesc": "Hintergrundrauschen hebt unterschwellige Signale an und unterstützt Aufmerksamkeit und Arbeitsgedächtnis.",
+    "hygieneTitle": "Sichere Klanghygiene:",
+    "hygieneDesc": "Lautstärke unter 60 dBA am Ohr halten, Lautsprecher 1,5 m entfernt aufstellen und Timer nutzen.",
+    "faqTitle": "Häufig gestellte Fragen (FAQ)",
+    "faq1Q": "Q: Was unterscheidet weißes, rosa und braunes Rauschen?",
+    "faq1A": "A: Die spektrale Energieverteilung. Weiß hat alle Frequenzen gleich, Rosa betont natürliche Mitten und Braunes tiefe Frequenzen für erholsamen Schlaf.",
+    "faq2Q": "Q: Wie verhindert Klangmaskierung nächtliches Erwachen?",
+    "faq2A": "A: Ein gleichmäßiger Teppich hebt die Hörschwelle an, fängt Lärmspitzen ab und schützt den Schlafzyklus.",
+    "faq3Q": "Q: Hilft Hintergrundrauschen bei ADHS oder Konzentrationsproblemen?",
+    "faq3A": "A: Ja. Durch stochastische Resonanz stabilisiert das Rauschen die neurale Erregung und verbessert den Fokus.",
+    "faq4Q": "Q: Welche Lautstärke und Entfernung wird empfohlen?",
+    "faq4A": "A: Unter 60 dBA am Ohr, 1,5 bis 2 Meter Abstand zum Bett und Nutzung des integrierten Sleep-Timers.",
+    "referencesTitle": "Wissenschaftliche Referenzen"
   }
 }

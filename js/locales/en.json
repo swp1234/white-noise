@@ -55,7 +55,28 @@
     "title": "📊 My Usage History"
   },
   "premium": {
-    "badge": "✨ Sleep Expert Tips"
+    "badge": "✨ Sleep Expert Tips",
+    "soundTechTitle": "Sound Synthesis Technology",
+    "soundTechDesc": "Pure client-side Web Audio API synthesis. Ultra-low latency, zero external streaming, and 100% offline playback support.",
+    "environmentTitle": "Optimal Sleep Environment",
+    "envTemp": "1. Temperature: 18–22°C (64–72°F)",
+    "envLight": "2. Lighting: Dim ambient light 1 hour before sleep",
+    "envNoise": "3. Noise: Continuous masking to prevent abrupt audio spikes",
+    "envHumidity": "4. Humidity: Maintain 40–60% relative humidity",
+    "effectsTitle": "Sound Frequency Benefits",
+    "effectBrown": "🟫 Brown Noise: Deep delta wave sleep & rapid calming",
+    "effectPink": "🩷 Pink Noise: Memory consolidation & light sleep stabilization",
+    "effectRain": "🌧️ Rain: Parasympathetic activation & stress relief",
+    "effectOcean": "🌊 Ocean Waves: Meditation & autonomic rhythm stabilization",
+    "effectFire": "🔥 Campfire: Primordial grounding & cozy security",
+    "recommendedTitle": "Scientifically Recommended Blends",
+    "blendSleep": "😴 Sleep: Rain 40% + Brown Noise 25% + Ocean 20%",
+    "blendFocus": "🎯 Focus: Cafe 30% + Pink Noise 20%",
+    "blendMeditate": "🧘 Meditation: Ocean 40% + Wind 25%",
+    "timeTitle": "Personalized Time-Based Recommendation",
+    "modeSleep": "🌙 Night Mode: Rain 40% + Brown Noise 25% + Ocean 20%",
+    "modeFocus": "🎯 Focus Mode: Cafe 30% + Pink Noise 20%",
+    "modeRelax": "🧘 Relax Mode: Ocean 40% + Wind 25%"
   },
   "ads": {
     "label": "Ad",
@@ -71,5 +92,37 @@
     "affirmation": "Affirmation",
     "stressCheck": "Stress Check",
     "pomodoroTimer": "Pomodoro Timer"
+  },
+  "promo": {
+    "detox": "Pair with Digital Detox"
+  },
+  "guide": {
+    "aboutTitle": "Sound Spectrum Science & Sleep Protocols",
+    "disclaimer": "This sound player is an educational and wellness tool. It is not intended as medical therapy for chronic insomnia, tinnitus, or clinical sensory processing disorders. Consult a healthcare professional if sleep difficulties persist.",
+    "physicsTitle": "Acoustic Physics & Sound Frequency Spectra",
+    "physicsDesc": "Acoustic noise is characterized by its power spectral density across audible frequencies (20 Hz to 20,000 Hz). The mathematical formula P(f) = 1/f^α defines the spectral slope and perceptual warmth of each color of noise.",
+    "whiteTitle": "White Noise (α = 0):",
+    "whiteDesc": "Equal energy across all audible frequencies. Resembles television static or an air conditioner; provides broad acoustic masking against irregular environmental disruptions.",
+    "pinkTitle": "Pink Noise (α = 1):",
+    "pinkDesc": "Power drops by 3 dB per octave. Aligns closely with human cochlear sensitivity and natural rhythms (rainfall, gentle wind). Research associates pink noise with enhanced slow-wave sleep and memory consolidation.",
+    "brownTitle": "Brown / Brownian Noise (α = 2):",
+    "brownDesc": "Power drops by 6 dB per octave, producing deep, low-frequency warmth similar to roaring ocean surf or distant thunder. Highly favored for rapid relaxation and reducing nervous arousal.",
+    "mechanismsTitle": "Neurological Mechanisms & Benefits",
+    "maskingTitle": "Auditory Masking:",
+    "maskingDesc": "Continuous stationary noise smooths acoustic contrast, preventing sudden auditory cortex arousal spikes caused by erratic ambient noises (doors, sirens, traffic).",
+    "resonanceTitle": "Stochastic Resonance & Focus:",
+    "resonanceDesc": "Nonlinear background acoustic energy can elevate sub-threshold neural signals in the prefrontal cortex, enhancing cognitive performance, task attention, and working memory.",
+    "hygieneTitle": "Safe Sound Hygiene:",
+    "hygieneDesc": "Maintain sound output below 60 dBA at ear level, position speakers at least 1.5 meters away from the bed, and utilize the sleep timer for optimal rest transitions.",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1Q": "Q: What is the difference between white, pink, and brown noise?",
+    "faq1A": "A: The difference is spectral energy distribution. White noise has equal energy across all frequencies, pink noise decreases by 3 dB per octave for a natural soothing balance, and brown noise drops by 6 dB per octave with rich low-frequency depth for deep sleep.",
+    "faq2Q": "Q: How does sound masking prevent nighttime awakenings?",
+    "faq2A": "A: Sudden ambient sounds trigger micro-arousals in the brain. A continuous soundscape raises the baseline auditory threshold, masking transient noise spikes and stabilizing sleep cycles.",
+    "faq3Q": "Q: Can ambient noise help people with ADHD or focus issues?",
+    "faq3A": "A: Yes. Through stochastic resonance, optimal levels of acoustic background noise help dopamine-deficient individuals modulate arousal levels and maintain sustained attention during cognitive tasks.",
+    "faq4Q": "Q: What is the recommended volume and speaker placement?",
+    "faq4A": "A: Keep volume below 60 dBA (quiet conversational level) at ear level and place speakers 1.5 to 2 meters (5 to 7 feet) away from your bed. Use the built-in timer to avoid unnecessary all-night exposure.",
+    "referencesTitle": "Scientific References"
   }
 }

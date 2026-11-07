@@ -55,7 +55,28 @@
     "title": "📊 Mi Historial de Uso"
   },
   "premium": {
-    "badge": "✨ Consejos de Experto en Sueño"
+    "badge": "✨ Consejos de Expertos en Sueño",
+    "soundTechTitle": "Tecnología de Síntesis Sonora",
+    "soundTechDesc": "Síntesis 100% en cliente con Web Audio API. Sin latencia, sin transmisión externa y soporte offline total.",
+    "environmentTitle": "Entorno Óptimo para Dormir",
+    "envTemp": "1. Temperatura: 18–22°C (64–72°F)",
+    "envLight": "2. Iluminación: Luz tenue 1 hora antes de dormir",
+    "envNoise": "3. Ruido: Enmascaramiento continuo para neutralizar picos",
+    "envHumidity": "4. Humedad: Mantener entre 40–60%",
+    "effectsTitle": "Beneficios de Frecuencias Sonoras",
+    "effectBrown": "🟫 Ruido Marrón: Sueño delta profundo y calma rápida",
+    "effectPink": "🩷 Ruido Rosa: Consolidación de memoria y sueño reparador",
+    "effectRain": "🌧️ Lluvia: Activación parasimpática y alivio del estrés",
+    "effectOcean": "🌊 Olas del Mar: Meditación y ritmo cardíaco estable",
+    "effectFire": "🔥 Hoguera: Sensación ancestral de seguridad y confort",
+    "recommendedTitle": "Mezclas Recomendadas Científicamente",
+    "blendSleep": "😴 Sueño: Lluvia 40% + Ruido Marrón 25% + Olas 20%",
+    "blendFocus": "🎯 Concentración: Café 30% + Ruido Rosa 20%",
+    "blendMeditate": "🧘 Meditación: Olas 40% + Viento 25%",
+    "timeTitle": "Recomendación Según tu Hora Actual",
+    "modeSleep": "🌙 Modo Noche: Lluvia 40% + Ruido Marrón 25% + Olas 20%",
+    "modeFocus": "🎯 Modo Enfoque: Café 30% + Ruido Rosa 20%",
+    "modeRelax": "🧘 Modo Relax: Olas 40% + Viento 25%"
   },
   "ads": {
     "label": "Anuncio",
@@ -71,5 +92,37 @@
     "affirmation": "Afirmaciones",
     "stressCheck": "Test de estrés",
     "pomodoroTimer": "Temporizador Pomodoro"
+  },
+  "promo": {
+    "detox": "Usar junto con Desintoxicación Digital"
+  },
+  "guide": {
+    "aboutTitle": "Ciencia del Espectro Sonoro y Protocolos de Sueño",
+    "disclaimer": "Este reproductor es una herramienta educativa y de bienestar. No constituye un tratamiento médico para el insomnio crónico ni el tinnitus. Consulte a un especialista si las dificultades persisten.",
+    "physicsTitle": "Física Acústica y Espectros de Frecuencia",
+    "physicsDesc": "El ruido acústico se define por su densidad espectral de potencia (PSD) en frecuencias audibles (20 Hz a 20.000 Hz). La relación matemática P(f) = 1/f^α define el perfil perceptivo de cada color de ruido.",
+    "whiteTitle": "Ruido Blanco (α = 0):",
+    "whiteDesc": "Energía uniforme en todas las frecuencias audibles. Ofrece un enmascaramiento acústico óptimo contra interrupciones ambientales impredecibles.",
+    "pinkTitle": "Ruido Rosa (α = 1):",
+    "pinkDesc": "La potencia disminuye 3 dB por octava. Se alinea con la audición humana y ritmos naturales (lluvia), promoviendo el sueño de ondas lentas.",
+    "brownTitle": "Ruido Marrón / Browniano (α = 2):",
+    "brownDesc": "Disminuye 6 dB por octava con tonos graves profundos similares a olas oceánicas, ideal para una relajación muscular profunda.",
+    "mechanismsTitle": "Mecanismos Neurológicos y Beneficios",
+    "maskingTitle": "Enmascaramiento Auditivo:",
+    "maskingDesc": "El ruido continuo atenúa los contrastes acústicos, evitando picos de alerta en la corteza auditiva por sonidos bruscos.",
+    "resonanceTitle": "Resonancia Estocástica y Concentración:",
+    "resonanceDesc": "La energía de fondo puede elevar señales neuronales débiles en la corteza prefrontal, favoreciendo la concentración y memoria de trabajo.",
+    "hygieneTitle": "Higiene Sonora Segura:",
+    "hygieneDesc": "Mantenga el volumen por debajo de 60 dBA al nivel del oído, coloque los altavoces a 1,5 metros de la cama y use el temporizador de apagado.",
+    "faqTitle": "Preguntas Frecuentes (FAQ)",
+    "faq1Q": "Q: ¿Cuál es la diferencia entre ruido blanco, rosa y marrón?",
+    "faq1A": "A: La distribución de energía espectral. El blanco cubre todo por igual, el rosa desciende con suavidad natural, y el marrón refuerza los graves para un descanso profundo.",
+    "faq2Q": "Q: ¿Cómo previene el enmascaramiento los microdespertares?",
+    "faq2A": "A: Eleva el umbral auditivo basal, neutralizando picos sonoros nocturnos repentinos y protegiendo el ciclo de sueño.",
+    "faq3Q": "Q: ¿Puede ayudar el sonido ambiental en personas con TDAH?",
+    "faq3A": "A: Sí. Mediante resonancia estocástica, el ruido de fondo ayuda a estabilizar la estimulación cerebral y mejorar el foco.",
+    "faq4Q": "Q: ¿Cuál es el volumen y la distancia recomendada?",
+    "faq4A": "A: Menos de 60 dBA junto al oído y colocar los altavoces a 1,5–2 metros de distancia, usando el temporizador integrado.",
+    "referencesTitle": "Referencias Científicas"
   }
 }

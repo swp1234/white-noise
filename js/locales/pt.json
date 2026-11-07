@@ -55,7 +55,28 @@
     "title": "📊 Meu Histórico de Uso"
   },
   "premium": {
-    "badge": "✨ Dicas de Especialista em Sono"
+    "badge": "✨ Dicas de Especialistas em Sono",
+    "soundTechTitle": "Tecnologia de Síntese Sonora",
+    "soundTechDesc": "Síntese pura com Web Audio API no navegador. Sem latência, sem consumo de dados e 100% offline.",
+    "environmentTitle": "Ambiente Perfeito para Dormir",
+    "envTemp": "1. Temperatura: 18–22°C",
+    "envLight": "2. Iluminação: Luz baixa 1h antes de deitar",
+    "envNoise": "3. Ruído: Mascaramento contínuo contra picos de som",
+    "envHumidity": "4. Umidade: Manter entre 40–60%",
+    "effectsTitle": "Benefícios das Frequências",
+    "effectBrown": "🟫 Ruído Marrom: Sono delta profundo e calma imediata",
+    "effectPink": "🩷 Ruído Rosa: Sono reparador e fixação da memória",
+    "effectRain": "🌧️ Chuva: Ativação parassimpática e alívio do estresse",
+    "effectOcean": "🌊 Ondas do Mar: Ritmo cardíaco estável e meditação",
+    "effectFire": "🔥 Fogueira: Acolhimento e sensação de segurança",
+    "recommendedTitle": "Combinações Recomendadas Cientificamente",
+    "blendSleep": "😴 Sono: Chuva 40% + Ruído Marrom 25% + Ondas 20%",
+    "blendFocus": "🎯 Foco: Café 30% + Ruído Rosa 20%",
+    "blendMeditate": "🧘 Meditação: Ondas 40% + Vento 25%",
+    "timeTitle": "Recomendação Baseada no Horário Atual",
+    "modeSleep": "🌙 Modo Noite: Chuva 40% + Ruído Marrom 25% + Ondas 20%",
+    "modeFocus": "🎯 Modo Foco: Café 30% + Ruído Rosa 20%",
+    "modeRelax": "🧘 Modo Relax: Ondas 40% + Vento 25%"
   },
   "ads": {
     "label": "Anúncio",
@@ -71,5 +92,37 @@
     "affirmation": "Afirmações",
     "stressCheck": "Teste de estresse",
     "pomodoroTimer": "Temporizador Pomodoro"
+  },
+  "promo": {
+    "detox": "Usar junto com Detox Digital"
+  },
+  "guide": {
+    "aboutTitle": "Ciência do Espectro Sonoro e Protocolos de Sono",
+    "disclaimer": "Este player é uma ferramenta educacional e de bem-estar. Não substitui avaliação médica para insônia crônica ou zumbido.",
+    "physicsTitle": "Física Acústica e Espectros Sonoros",
+    "physicsDesc": "O ruído sonoro é classificado pela densidade espectral de potência (PSD) entre 20 Hz e 20.000 Hz. A fórmula P(f) = 1/f^α define a calidez do som.",
+    "whiteTitle": "Ruído Branco (α = 0):",
+    "whiteDesc": "Energia uniforme em todas as frequências audíveis. Mascara ruídos externos indesejados.",
+    "pinkTitle": "Ruído Rosa (α = 1):",
+    "pinkDesc": "Queda de 3 dB por oitava. Favorece o sono de ondas lentas e a consolidação da memória.",
+    "brownTitle": "Ruído Marrom / Browniano (α = 2):",
+    "brownDesc": "Queda de 6 dB por oitava. Tons graves envolventes para relaxamento profundo.",
+    "mechanismsTitle": "Mecanismos Neurológicos e Benefícios",
+    "maskingTitle": "Mascaramento Auditivo:",
+    "maskingDesc": "Suaviza contrastes acústicos, evitando sobressaltos no córtex auditivo causados por barulhos repentinos.",
+    "resonanceTitle": "Ressonância Estocástica e Foco:",
+    "resonanceDesc": "Ajuda a potencializar sinais neurais no córtex pré-frontal, melhorando o foco em tarefas cognitivas.",
+    "hygieneTitle": "Higiene Sonora Segura:",
+    "hygieneDesc": "Mantenha o volume abaixo de 60 dBA, posicione a caixa a 1,5 m da cama e use o temporizador.",
+    "faqTitle": "Perguntas Frequentes (FAQ)",
+    "faq1Q": "Q: Qual a diferença entre ruído branco, rosa e marrom?",
+    "faq1A": "A: A distribuição de frequências. O branco é linear, o rosa equilibra agudos com suavidade, e o marrom prioriza graves para sono profundo.",
+    "faq2Q": "Q: Como o som evita despertares noturnos?",
+    "faq2A": "A: Eleva o limiar auditivo de base, absorvendo picos repentinos de ruído ambiente e mantendo o sono contínuo.",
+    "faq3Q": "Q: Ruídos de fundo ajudam pessoas com TDAH?",
+    "faq3A": "A: Sim. Pelo princípio da ressonância estocástica, estabiliza a atenção e o desempenho cognitivo.",
+    "faq4Q": "Q: Qual volume e distância recomendados?",
+    "faq4A": "A: Menos de 60 dBA junto ao ouvido, 1,5 a 2 metros de distância da cama, utilizando o temporizador.",
+    "referencesTitle": "Referências Científicas"
   }
 }

@@ -55,7 +55,28 @@
     "title": "📊 Mon Historique d'Utilisation"
   },
   "premium": {
-    "badge": "✨ Conseils d'Experts du Sommeil"
+    "badge": "✨ Conseils d'Experts du Sommeil",
+    "soundTechTitle": "Technologie de Synthèse Sonore",
+    "soundTechDesc": "Synthèse Web Audio API 100% côté client. Aucune latence, aucun streaming externe, fonctionnement hors-ligne total.",
+    "environmentTitle": "Environnement Idéal pour Dormir",
+    "envTemp": "1. Température: 18–22°C",
+    "envLight": "2. Éclairage: Tamiser 1h avant le coucher",
+    "envNoise": "3. Bruit: Masquage continu pour bloquer les pics",
+    "envHumidity": "4. Humidité: Maintenir entre 40–60%",
+    "effectsTitle": "Bienfaits des Fréquences",
+    "effectBrown": "🟫 Bruit Brun: Sommeil delta profond et détente immédiate",
+    "effectPink": "🩷 Bruit Rose: Consolidation de la mémoire et sommeil réparateur",
+    "effectRain": "🌧️ Pluie: Activation parasympathique et diminution du stress",
+    "effectOcean": "🌊 Vagues: Stabilisation cardiaque et méditation",
+    "effectFire": "🔥 Feu de Camp: Sentiment de réconfort et sécurité",
+    "recommendedTitle": "Mélanges Recommandés Scientifiquement",
+    "blendSleep": "😴 Sommeil: Pluie 40% + Bruit Brun 25% + Vagues 20%",
+    "blendFocus": "🎯 Concentration: Café 30% + Bruit Rose 20%",
+    "blendMeditate": "🧘 Méditation: Vagues 40% + Vent 25%",
+    "timeTitle": "Recommandation Selon l'Heure Actuelle",
+    "modeSleep": "🌙 Mode Nuit: Pluie 40% + Bruit Brun 25% + Vagues 20%",
+    "modeFocus": "🎯 Mode Focus: Café 30% + Bruit Rose 20%",
+    "modeRelax": "🧘 Mode Détente: Vagues 40% + Vent 25%"
   },
   "ads": {
     "label": "Annonce",
@@ -71,5 +92,37 @@
     "affirmation": "Affirmations",
     "stressCheck": "Test de stress",
     "pomodoroTimer": "Minuteur Pomodoro"
+  },
+  "promo": {
+    "detox": "Utiliser avec la Détox Digitale"
+  },
+  "guide": {
+    "aboutTitle": "Science du Spectre Sonore & Sommeil",
+    "disclaimer": "Cet outil est destiné au bien-être et à l'éducation. Il ne remplace pas un avis médical pour les troubles du sommeil chroniques ou les acouphènes.",
+    "physicsTitle": "Physique Acoustique & Spectres Sonores",
+    "physicsDesc": "Le bruit acoustique est défini par sa densité spectrale de puissance (PSD) entre 20 Hz et 20 000 Hz. La formule P(f) = 1/f^α détermine la texture sonore.",
+    "whiteTitle": "Bruit Blanc (α = 0):",
+    "whiteDesc": "Énergie uniforme sur toutes les fréquences. Masque efficacement les perturbations sonores soudaines.",
+    "pinkTitle": "Bruit Rose (α = 1):",
+    "pinkDesc": "Diminution de 3 dB par octave. Calqué sur les sons naturels (pluie), il favorise les ondes lentes du sommeil.",
+    "brownTitle": "Bruit Brun / Brownien (α = 2):",
+    "brownDesc": "Diminution de 6 dB par octave. Sons graves enveloppants idéaux pour apaiser l'agitation mentale.",
+    "mechanismsTitle": "Mécanismes Neurologiques & Bienfaits",
+    "maskingTitle": "Masquage Auditif:",
+    "maskingDesc": "Atténue le contraste sonore, évitant les sursauts du cortex auditif provoqués par les bruits ambiants.",
+    "resonanceTitle": "Résonance Stochastique & Concentration:",
+    "resonanceDesc": "Améliore la transmission des signaux neuronaux dans le cortex préfrontal, soutenant l'attention.",
+    "hygieneTitle": "Hygiène Sonore Sécurisée:",
+    "hygieneDesc": "Conservez un volume inférieur à 60 dBA, placez les haut-parleurs à 1,5 m du lit et utilisez la minuterie.",
+    "faqTitle": "Foire Aux Questions (FAQ)",
+    "faq1Q": "Q: Quelle est la différence entre bruit blanc, rose et brun ?",
+    "faq1A": "A: La répartition spectrale. Le blanc est homogène, le rose adoucit les aigus, et le brun accentue les basses pour le sommeil profond.",
+    "faq2Q": "Q: Comment le masquage sonore prévient-il les réveils nocturnes ?",
+    "faq2A": "A: En élevant le seuil auditif de base, il absorbe les pointes de bruit soudaines et protège la continuité du sommeil.",
+    "faq3Q": "Q: Le bruit de fond aide-t-il les personnes avec TDAH ?",
+    "faq3A": "A: Oui. Grâce à la résonance stochastique, il optimise le niveau d'éveil cérébral et soutient la concentration.",
+    "faq4Q": "Q: Quel volume et quelle distance d'écoute sont recommandés ?",
+    "faq4A": "A: Moins de 60 dBA à hauteur d'oreille, à 1,5–2 mètres du lit, avec arrêt automatique via la minuterie.",
+    "referencesTitle": "Références Scientifiques"
   }
 }

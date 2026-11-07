@@ -55,7 +55,28 @@
     "title": "📊 Riwayat Penggunaan Saya"
   },
   "premium": {
-    "badge": "✨ Tips Ahli Tidur"
+    "badge": "✨ Tips Ahli Tidur",
+    "soundTechTitle": "Teknologi Sintesis Suara",
+    "soundTechDesc": "Sintesis Web Audio API langsung di perangkat. Tanpa jeda, hemat kuota, dan 100% berfungsi offline.",
+    "environmentTitle": "Lingkungan Tidur Ideal",
+    "envTemp": "1. Suhu Ruangan: 18–22°C",
+    "envLight": "2. Pencahayaan: Redupkan lampu 1 jam sebelum tidur",
+    "envNoise": "3. Suara: Gunakan masking untuk meredam kebisingan",
+    "envHumidity": "4. Kelembapan: Jaga di kisaran 40–60%",
+    "effectsTitle": "Manfaat Frekuensi Suara",
+    "effectBrown": "🟫 Brown Noise: Tidur lelap gelombang delta & rasa tenang",
+    "effectPink": "🩷 Pink Noise: Kualitas tidur stabil & penguatan memori",
+    "effectRain": "🌧️ Suara Hujan: Mengaktifkan saraf parasimpatis & rileks",
+    "effectOcean": "🌊 Ombak Laut: Menstabilkan detak jantung & meditasi",
+    "effectFire": "🔥 Api Unggun: Kehangatan dan rasa nyaman alami",
+    "recommendedTitle": "Kombinasi Rekomendasi Ilmiah",
+    "blendSleep": "😴 Tidur: Hujan 40% + Brown Noise 25% + Ombak 20%",
+    "blendFocus": "🎯 Fokus: Kafe 30% + Pink Noise 20%",
+    "blendMeditate": "🧘 Meditasi: Ombak 40% + Angin 25%",
+    "timeTitle": "Rekomendasi Sesuai Waktu Saat Ini",
+    "modeSleep": "🌙 Mode Malam: Hujan 40% + Brown Noise 25% + Ombak 20%",
+    "modeFocus": "🎯 Mode Siang: Kafe 30% + Pink Noise 20%",
+    "modeRelax": "🧘 Mode Santai: Ombak 40% + Angin 25%"
   },
   "ads": {
     "label": "Iklan",
@@ -71,5 +92,37 @@
     "affirmation": "Afirmasi",
     "stressCheck": "Cek stres",
     "pomodoroTimer": "Timer Pomodoro"
+  },
+  "promo": {
+    "detox": "Gunakan bersama Detoks Digital"
+  },
+  "guide": {
+    "aboutTitle": "Sains Spektrum Suara & Panduan Tidur",
+    "disclaimer": "Pemutar suara ini adalah sarana edukasi dan relaksasi. Bukan terapi medis untuk insomnia kronis atau tinitus.",
+    "physicsTitle": "Fisika Akustik & Spektrum Frekuensi",
+    "physicsDesc": "Kebisingan akustik dicirikan oleh kerapatan spektral daya (PSD) pada frekuensi 20 Hz hingga 20.000 Hz. Rumus P(f) = 1/f^α menentukan karakteristik warna suara.",
+    "whiteTitle": "White Noise (α = 0):",
+    "whiteDesc": "Energi seimbang di seluruh frekuensi. Efektif meredam gangguan suara mendadak di sekitar.",
+    "pinkTitle": "Pink Noise (α = 1):",
+    "pinkDesc": "Daya menurun 3 dB per oktaf. Selaras dengan pendengaran manusia dan mendukung tidur gelombang lambat.",
+    "brownTitle": "Brown Noise (α = 2):",
+    "brownDesc": "Menurun 6 dB per oktaf. Suara bas berat mirip deburan ombak, ideal untuk relaksasi mendalam.",
+    "mechanismsTitle": "Mekanisme Neurologis & Manfaat",
+    "maskingTitle": "Penyamaran Auditori (Masking):",
+    "maskingDesc": "Suara stabil menaikkan ambang dengar, mencegah otak kaget akibat bunyi keras mendadak.",
+    "resonanceTitle": "Resonansi Stokastik & Fokus:",
+    "resonanceDesc": "Meningkatkan sinyal saraf di korteks prefrontal untuk menjaga daya konsentrasi dan memori kerja.",
+    "hygieneTitle": "Kebiasaan Mendengarkan yang Aman:",
+    "hygieneDesc": "Jaga volume di bawah 60 dBA, letakkan speaker 1,5 m dari tempat tidur, dan gunakan pengatur waktu.",
+    "faqTitle": "Pertanyaan Umum (FAQ)",
+    "faq1Q": "Q: Apa perbedaan white, pink, dan brown noise?",
+    "faq1A": "A: Perbedaannya pada distribusi frekuensi. White merata, pink lebih alami seperti hujan, dan brown kaya nada rendah untuk tidur lelap.",
+    "faq2Q": "Q: Bagaimana penyamaran suara mencegah terbangun di malam hari?",
+    "faq2A": "A: Suara yang konsisten menutupi lonjakan suara mendadak dan menjaga siklus tidur tetap utuh.",
+    "faq3Q": "Q: Bisakah suara latar membantu fokus bagi penderita ADHD?",
+    "faq3A": "A: Ya. Lewat resonansi stokastik, kebisingan latar yang tepat membantu menjaga tingkat fokus kognitif.",
+    "faq4Q": "Q: Berapa volume dan jarak yang disarankan?",
+    "faq4A": "A: Di bawah 60 dBA di dekat telinga, jarak 1,5 hingga 2 meter dari tempat tidur, dan gunakan pengatur waktu tidur.",
+    "referencesTitle": "Referensi Ilmiah"
   }
 }

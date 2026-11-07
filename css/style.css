@@ -36,13 +36,15 @@ input[type="text"], textarea {
 .theme-toggle {
     position: fixed;
     top: 12px;
-    right: 56px;
+    right: 58px;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1100,4 +1102,174 @@ button,a[href],input[type="button"],input[type="submit"],[role="button"]{min-wid
 ::-webkit-scrollbar-thumb:hover {
     background: #7d8a97;
     opacity: 0.8;
+}
+
+/* Educational & Scientific Guide Section */
+.about-test {
+    width: 100%;
+    max-width: 480px;
+    margin: 24px auto 16px;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    background: var(--glass);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    text-align: left;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.about-test summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 13px 18px;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    list-style: none;
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+
+.about-test summary::-webkit-details-marker {
+    display: none;
+}
+
+.about-test summary::after {
+    content: '\25BC';
+    margin-left: auto;
+    color: var(--text-secondary);
+    font-size: 11px;
+    transition: transform 0.25s ease;
+}
+
+.about-test[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.about-test-body {
+    padding: 0 18px 20px;
+    box-sizing: border-box;
+}
+
+.about-test-body p {
+    margin: 0 0 12px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.about-test-body .about-test-note {
+    margin-bottom: 14px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.6;
+    border-left: 2px solid var(--accent);
+    padding-left: 8px;
+}
+
+.about-section-heading {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 700;
+    margin: 18px 0 10px;
+    border-left: 3px solid var(--accent);
+    padding-left: 8px;
+}
+
+.about-guide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+}
+
+.about-guide-list li {
+    padding: 7px 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about-guide-list li:last-child {
+    border-bottom: none;
+}
+
+.about-guide-list li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.about-faq-item {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.about-faq-q {
+    display: block;
+    font-size: 13px;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.about-faq-a {
+    margin: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    color: var(--text-secondary) !important;
+}
+
+.about-citation {
+    font-size: 11px !important;
+    color: var(--text-secondary) !important;
+    opacity: 0.8;
+    line-height: 1.5 !important;
+    margin-bottom: 6px !important;
+}
+
+/* Premium Structured Blocks */
+.premium-section-block {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+}
+
+.premium-section-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.premium-section-block h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.premium-section-block p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 4px;
+}
+
+.premium-time-clock {
+    font-family: monospace;
+    font-size: 13px;
+    color: var(--accent);
+}
+
+.premium-time-mode {
+    color: var(--text-primary) !important;
+    margin-top: 6px;
 }

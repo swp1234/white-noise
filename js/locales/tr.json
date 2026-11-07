@@ -55,7 +55,28 @@
     "title": "📊 Benim Kullanım Geçmişi"
   },
   "premium": {
-    "badge": "✨ Uyku Uzmanı İpuçları"
+    "badge": "✨ Uyku Uzmanı İpuçları",
+    "soundTechTitle": "Ses Sentezi Teknolojisi",
+    "soundTechDesc": "Web Audio API ile doğrudan tarayıcıda sentezlenir. Gecikmesiz, veri tüketimsiz ve tamamen çevrimdışı çalışır.",
+    "environmentTitle": "İdeal Uyku Ortamı",
+    "envTemp": "1. Oda Sıcaklığı: 18–22°C arasında tutun",
+    "envLight": "2. Işık: Uykudan 1 saat önce loş ışığa geçin",
+    "envNoise": "3. Gürültü: Ani sesleri sürekli maskeleme ile engelleyin",
+    "envHumidity": "4. Nem Oranı: %40–60 seviyesinde koruyun",
+    "effectsTitle": "Frekansların Faydaları",
+    "effectBrown": "🟫 Kahverengi Gürültü: Derin delta uykusu ve hızlı sakinleşme",
+    "effectPink": "🩷 Pembe Gürültü: Hafıza pekiştirme ve kaliteli uyku",
+    "effectRain": "🌧️ Yağmur: Parasempatik sinir aktivasyonu ve stres azaltma",
+    "effectOcean": "🌊 Deniz Dalgaları: Nabız dengeleme ve meditasyon",
+    "effectFire": "🔥 Kamp Ateşi: İçsel huzur ve güven hissi",
+    "recommendedTitle": "Bilimsel Olarak Önerilen Karışımlar",
+    "blendSleep": "😴 Uyku: Yağmur %40 + Kahverengi Gürültü %25 + Dalga %20",
+    "blendFocus": "🎯 Odaklanma: Kafe %30 + Pembe Gürültü %20",
+    "blendMeditate": "🧘 Meditasyon: Dalga %40 + Rüzgar %25",
+    "timeTitle": "Şu Anki Saate Özel Tavsiye",
+    "modeSleep": "🌙 Gece Modu: Yağmur %40 + Kahverengi Gürültü %25 + Dalga %20",
+    "modeFocus": "🎯 Gündüz Odak Modu: Kafe %30 + Pembe Gürültü %20",
+    "modeRelax": "🧘 Rahatlama Modu: Dalga %40 + Rüzgar %25"
   },
   "ads": {
     "label": "Reklam",
@@ -71,5 +92,37 @@
     "affirmation": "Olumlamalar",
     "stressCheck": "Stres testi",
     "pomodoroTimer": "Pomodoro zamanlayıcı"
+  },
+  "promo": {
+    "detox": "Dijital Detoks ile Birlikte Kullan"
+  },
+  "guide": {
+    "aboutTitle": "Ses Spektrumu Bilimi & Uyku Protokolleri",
+    "disclaimer": "Bu ses çalar bir esenlik ve eğitim aracıdır. Kronik uykusuzluk veya kulak çınlaması için tıbbi tedavi yerine geçmez.",
+    "physicsTitle": "Akustik Fizik & Frekans Spektrumları",
+    "physicsDesc": "Akustik gürültü, 20 Hz ile 20.000 Hz arasındaki güç spektral yoğunluğu (PSD) ile tanımlanır. P(f) = 1/f^α formülü sesin derinliğini belirler.",
+    "whiteTitle": "Beyaz Gürültü (α = 0):",
+    "whiteDesc": "Tüm frekanslarda eşit enerjiye sahiptir. Çevredeki ani gürültüleri etkili bir şekilde maskeler.",
+    "pinkTitle": "Pembe Gürültü (α = 1):",
+    "pinkDesc": "Oktav başına 3 dB azalır. Doğal ritimlerle uyumludur ve derin yavaş dalga uykusunu destekler.",
+    "brownTitle": "Kahverengi / Brown Gürültü (α = 2):",
+    "brownDesc": "Oktav başına 6 dB azalır. Okyanus dalgaları gibi zengin bas tonlarıyla derin rahatlama sağlar.",
+    "mechanismsTitle": "Nörolojik Mekanizmalar & Faydalar",
+    "maskingTitle": "İşitsel Maskeleme:",
+    "maskingDesc": "Ses kontrastını yumuşatarak ani seslerin işitsel kortekste uyandırdığı irkilmeleri engeller.",
+    "resonanceTitle": "Stokastik Rezonans & Odaklanma:",
+    "resonanceDesc": "Prefrontal korteksteki sinyalleri güçlendirerek görev odaklanmasını ve çalışma belleğini destekler.",
+    "hygieneTitle": "Güvenli Ses Hijyeni:",
+    "hygieneDesc": "Kulak seviyesinde sesi 60 dBA'nın altında tutun, hoparlörü yataktan 1,5 m uzağa yerleştirin ve zamanlayıcı kullanın.",
+    "faqTitle": "Sıkça Sorulan Sorular (SSS)",
+    "faq1Q": "Q: Beyaz, pembe ve kahverengi gürültü arasındaki fark nedir?",
+    "faq1A": "A: Frekans dağılımı. Beyaz her bantta eşittir, pembe dengeli ve doğaldır, kahverengi ise derin uyku için güçlü bas içerir.",
+    "faq2Q": "Q: Ses maskeleme gece uyanmalarını nasıl önler?",
+    "faq2A": "A: İşitme eşiğini hafifçe yükselterek ani gürültüleri yutar ve uyku bütünlüğünü korur.",
+    "faq3Q": "Q: Arka plan gürültüsü DEHB odaklanmasına yardımcı olur mu?",
+    "faq3A": "A: Evet. Stokastik rezonans yoluyla optimum uyarılma sağlayarak dikkati toplamaya yardımcı olur.",
+    "faq4Q": "Q: Önerilen ses seviyesi ve mesafe nedir?",
+    "faq4A": "A: Kulak hizasında 60 dBA altı, yataktan 1,5–2 metre mesafe ve otomatik kapanma zamanlayıcısı tavsiye edilir.",
+    "referencesTitle": "Bilimsel Kaynaklar"
   }
 }
