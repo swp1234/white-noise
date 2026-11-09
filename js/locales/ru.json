@@ -91,7 +91,8 @@
     "detoxTimer": "Таймер детокса",
     "affirmation": "Аффирмации",
     "stressCheck": "Тест на стресс",
-    "pomodoroTimer": "Таймер Помодоро"
+    "pomodoroTimer": "Таймер Помодоро",
+    "hspTest": "Тест HSP"
   },
   "promo": {
     "detox": "Использовать с Цифровым детоксом"

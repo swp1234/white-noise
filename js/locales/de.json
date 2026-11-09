@@ -91,7 +91,8 @@
     "detoxTimer": "Detox-Timer",
     "affirmation": "Affirmationen",
     "stressCheck": "Stresstest",
-    "pomodoroTimer": "Pomodoro-Timer"
+    "pomodoroTimer": "Pomodoro-Timer",
+    "hspTest": "HSP-Test"
   },
   "promo": {
     "detox": "Zusammen mit Digitalem Detox nutzen"
