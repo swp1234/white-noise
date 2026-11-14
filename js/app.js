@@ -36,6 +36,7 @@ class WhiteNoiseApp {
             this.registerServiceWorker();
             this.setupThemeToggle();
             initRelatedFunnels();
+            updateWhiteNoiseCurated();
         } catch (e) {
             console.error('App initialization error:', e);
         }
@@ -740,6 +741,56 @@ function initRelatedFunnels() {
                         destination: link.getAttribute('href'),
                         source: 'white_noise',
                         lang: lang
+                    });
+                }
+            });
+        }
+    });
+}
+
+
+function getWhiteNoiseCuratedHref(key, lang) {
+    const asins = { whySleep: '1501144316', deepWork: '1455586692' };
+    const koQueries = { whySleep: '우리는 왜 잠을 자야 할까 매슈 워커', deepWork: '딥 워크 칼 뉴포트' };
+    const amazonDomains = {
+        en: { domain: 'amazon.com', tag: 'dopabrain-20' },
+        de: { domain: 'amazon.de', tag: '' },
+        fr: { domain: 'amazon.fr', tag: '' },
+        es: { domain: 'amazon.es', tag: '' },
+        pt: { domain: 'amazon.com', tag: 'dopabrain-20' },
+        ja: { domain: 'amazon.co.jp', tag: '' }
+    };
+    const asin = asins[key];
+    if (!asin) return '';
+    if (lang === 'ko') {
+        return 'https://search.kyobobook.co.kr/search?keyword=' + encodeURIComponent(koQueries[key] || key);
+    }
+    const market = amazonDomains[lang] || amazonDomains.en;
+    return 'https://www.' + market.domain + '/dp/' + asin + (market.tag ? ('?tag=' + market.tag) : '');
+}
+
+function updateWhiteNoiseCurated(lang) {
+    const resolvedLang = lang || (window.i18n ? window.i18n.currentLang : null) || new URLSearchParams(window.location.search).get('lang') || 'en';
+    document.querySelectorAll('#curated-resources-card .curated-item').forEach((item) => {
+        const key = item.dataset.curatedKey;
+        const nextHref = getWhiteNoiseCuratedHref(key, resolvedLang);
+        if (nextHref) item.href = nextHref;
+        if (!item.dataset.curatedTracked) {
+            item.dataset.curatedTracked = 'true';
+            item.addEventListener('click', () => {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'curated_resource_click', {
+                        app_name: 'white-noise',
+                        event_category: 'white_noise',
+                        resource_key: key,
+                        content_locale: window.i18n?.currentLang || resolvedLang,
+                        cta_surface: 'curated_resources'
+                    });
+                    gtag('event', 'content_cta_click', {
+                        cta_surface: 'white_noise_curated',
+                        destination: item.href,
+                        source: 'white_noise',
+                        lang: window.i18n?.currentLang || resolvedLang
                     });
                 }
             });

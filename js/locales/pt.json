@@ -126,5 +126,15 @@
     "faq4Q": "Q: Qual volume e distância recomendados?",
     "faq4A": "A: Menos de 60 dBA junto ao ouvido, 1,5 a 2 metros de distância da cama, utilizando o temporizador.",
     "referencesTitle": "Referências Científicas"
+  },
+  "curated": {
+    "badge": "CIÊNCIA DO SONO E FOCO",
+    "title": "Livros Recomendados de Sono e Foco Profundo",
+    "book1Title": "Por que nós dormimos (Why We Sleep)",
+    "book1Desc": "Matthew Walker, Ph.D. • Como os ciclos do sono e a acústica restauram o cérebro.",
+    "book2Title": "Trabalho Focado (Deep Work)",
+    "book2Desc": "Cal Newport • Estratégias de imersão cognitiva aliadas ao som ambiente.",
+    "readPill": "Ver livro ↗",
+    "disclosure": "Curadoria educativa sobre higiene do sono e concentração."
   }
 }

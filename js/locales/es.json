@@ -126,5 +126,15 @@
     "faq4Q": "Q: ¿Cuál es el volumen y la distancia recomendada?",
     "faq4A": "A: Menos de 60 dBA junto al oído y colocar los altavoces a 1,5–2 metros de distancia, usando el temporizador integrado.",
     "referencesTitle": "Referencias Científicas"
+  },
+  "curated": {
+    "badge": "CIENCIA DEL SUEÑO Y ENFOQUE",
+    "title": "Lecturas Recomendadas de Sueño y Concentración",
+    "book1Title": "Por qué dormimos (Why We Sleep)",
+    "book1Desc": "Matthew Walker, Ph.D. • Arquitectura del sueño y entornos acústicos saludables.",
+    "book2Title": "Enfócate (Deep Work)",
+    "book2Desc": "Cal Newport • Hábitos de atención profunda combinados con paisaje sonoro continuo.",
+    "readPill": "Ver libro ↗",
+    "disclosure": "Selección editorial educativa sobre descanso y concentración profunda."
   }
 }

@@ -126,5 +126,15 @@
     "faq4Q": "Q: Önerilen ses seviyesi ve mesafe nedir?",
     "faq4A": "A: Kulak hizasında 60 dBA altı, yataktan 1,5–2 metre mesafe ve otomatik kapanma zamanlayıcısı tavsiye edilir.",
     "referencesTitle": "Bilimsel Kaynaklar"
+  },
+  "curated": {
+    "badge": "UYKU VE ODAK BİLİMİ",
+    "title": "Uyku ve Derin Odak için Önerilen Kitaplar",
+    "book1Title": "Niçin Uyuruz? (Why We Sleep)",
+    "book1Desc": "Dr. Matthew Walker • Uyku döngüleri ve akustik maskelemenin nörobilimsel temeli.",
+    "book2Title": "Pürdikkat (Deep Work)",
+    "book2Desc": "Cal Newport • Beyaz gürültü ile dikkati koruma ve derin çalışma yöntemleri.",
+    "readPill": "İncele ↗",
+    "disclosure": "Uyku hijyeni ve odaklanma üzerine seçilmiş kaynaklar."
   }
 }

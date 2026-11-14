@@ -126,5 +126,15 @@
     "faq4Q": "Q: Berapa volume dan jarak yang disarankan?",
     "faq4A": "A: Di bawah 60 dBA di dekat telinga, jarak 1,5 hingga 2 meter dari tempat tidur, dan gunakan pengatur waktu tidur.",
     "referencesTitle": "Referensi Ilmiah"
+  },
+  "curated": {
+    "badge": "SAINS TIDUR & FOKUS",
+    "title": "Buku Pilihan tentang Tidur & Fokus Mendalam",
+    "book1Title": "Why We Sleep — Matthew Walker, Ph.D.",
+    "book1Desc": "Memahami siklus tidur dalam dan peran isolasi kebisingan untuk pemulihan otak.",
+    "book2Title": "Deep Work — Cal Newport",
+    "book2Desc": "Membangun fokus tanpa gangguan dengan rutinitas audio ambien yang konsisten.",
+    "readPill": "Lihat Buku ↗",
+    "disclosure": "Kurasi bacaan ilmiah untuk kualitas tidur dan produktivitas fokus."
   }
 }

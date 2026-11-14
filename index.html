@@ -390,6 +390,34 @@
                 <div class="premium-badge" data-i18n="premium.badge">✨ Sleep Expert Tips</div>
                 <div id="premium-content"></div>
             </div>
+
+            <!-- Curated Sleep & Focus Reading -->
+            <div class="curated-resources-card" id="curated-resources-card">
+                <div class="curated-header">
+                    <span class="curated-badge" data-i18n="curated.badge">EVIDENCE-BASED SLEEP &amp; FOCUS</span>
+                    <h4 class="curated-title" data-i18n="curated.title">Recommended Sleep &amp; Deep Focus Books</h4>
+                </div>
+                <div class="curated-grid">
+                    <a href="https://www.amazon.com/dp/1501144316?tag=dopabrain-20" target="_blank" rel="noopener noreferrer nofollow" class="curated-item" data-curated-key="whySleep">
+                        <span class="curated-icon" aria-hidden="true">🌙</span>
+                        <div class="curated-info">
+                            <strong data-i18n="curated.book1Title">Why We Sleep: Unlocking the Power of Sleep and Dreams</strong>
+                            <span data-i18n="curated.book1Desc">Matthew Walker, Ph.D. • How restorative acoustics &amp; sleep architecture restore brain function.</span>
+                        </div>
+                        <span class="curated-ext-pill" data-i18n="curated.readPill">View Book ↗</span>
+                    </a>
+                    <a href="https://www.amazon.com/dp/1455586692?tag=dopabrain-20" target="_blank" rel="noopener noreferrer nofollow" class="curated-item" data-curated-key="deepWork">
+                        <span class="curated-icon" aria-hidden="true">🎧</span>
+                        <div class="curated-info">
+                            <strong data-i18n="curated.book2Title">Deep Work: Rules for Focused Success in a Distracted World</strong>
+                            <span data-i18n="curated.book2Desc">Cal Newport, Ph.D. • Building uninterrupted cognitive flow alongside ambient sound.</span>
+                        </div>
+                        <span class="curated-ext-pill" data-i18n="curated.readPill">View Book ↗</span>
+                    </a>
+                </div>
+                <p class="curated-disclosure" data-i18n="curated.disclosure">Curated for sleep &amp; focus depth. Links use localized stores (dopabrain-20).</p>
+            </div>
+
             <!-- Educational & Scientific Guide Section -->
             <details class="about-test" open>
                 <summary data-i18n="guide.aboutTitle">Sound Spectrum Science &amp; Sleep Protocols</summary>
@@ -500,6 +528,7 @@
                     option.classList.add('active');
                     langMenu.classList.add('hidden');
                     if (typeof initRelatedFunnels === 'function') initRelatedFunnels();
+                    if (typeof updateWhiteNoiseCurated === 'function') updateWhiteNoiseCurated(lang);
                 });
             });
         }

@@ -1273,3 +1273,91 @@ button,a[href],input[type="button"],input[type="submit"],[role="button"]{min-wid
     color: var(--text-primary) !important;
     margin-top: 6px;
 }
+
+
+/* Curated Sleep & Focus Resources Card */
+.curated-resources-card {
+    width: 100%;
+    max-width: 480px;
+    margin: 20px auto;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    text-align: left;
+    box-sizing: border-box;
+}
+[data-theme="light"] .curated-resources-card {
+    background: rgba(44, 62, 80, 0.04);
+    border-color: rgba(44, 62, 80, 0.14);
+}
+.curated-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #93c5fd;
+    background: rgba(59, 130, 246, 0.15);
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+[data-theme="light"] .curated-badge {
+    color: #1d4ed8;
+    background: rgba(59, 130, 246, 0.12);
+}
+.curated-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 6px 0 12px;
+}
+.curated-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.curated-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+[data-theme="light"] .curated-item {
+    background: #fff;
+    border-color: rgba(44, 62, 80, 0.14);
+}
+.curated-item:hover {
+    border-color: rgba(147, 197, 253, 0.45);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+.curated-icon { font-size: 22px; flex-shrink: 0; }
+.curated-info { flex: 1; min-width: 0; }
+.curated-info strong { display: block; font-size: 13.5px; line-height: 1.35; margin-bottom: 2px; color: var(--text-primary); }
+.curated-info span { display: block; font-size: 11.5px; line-height: 1.4; color: var(--text-secondary); }
+.curated-ext-pill {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: #93c5fd;
+    background: rgba(59, 130, 246, 0.14);
+    padding: 5px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+[data-theme="light"] .curated-ext-pill { color: #1d4ed8; }
+.curated-disclosure {
+    margin: 10px 0 0;
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}

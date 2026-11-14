@@ -126,5 +126,15 @@
     "faq4Q": "Q: Welche Lautstärke und Entfernung wird empfohlen?",
     "faq4A": "A: Unter 60 dBA am Ohr, 1,5 bis 2 Meter Abstand zum Bett und Nutzung des integrierten Sleep-Timers.",
     "referencesTitle": "Wissenschaftliche Referenzen"
+  },
+  "curated": {
+    "badge": "SCHLAF- & FOKUSWISSEN",
+    "title": "Empfohlene Bücher zu Schlaf & Tiefenfokus",
+    "book1Title": "Das große Buch vom Schlaf (Why We Sleep)",
+    "book1Desc": "Prof. Matthew Walker • Schlafzyklen, Regeneration und reizarme Klanggestaltung.",
+    "book2Title": "Konzentriert arbeiten (Deep Work)",
+    "book2Desc": "Cal Newport • Ablenkungsfreie Fokusblöcke unterstützt durch akustisches Masking.",
+    "readPill": "Ansehen ↗",
+    "disclosure": "Ausgewählte Fachliteratur zu Schlafqualität und Konzentration."
   }
 }

@@ -126,5 +126,15 @@
     "faq4Q": "Q: What is the recommended volume and speaker placement?",
     "faq4A": "A: Keep volume below 60 dBA (quiet conversational level) at ear level and place speakers 1.5 to 2 meters (5 to 7 feet) away from your bed. Use the built-in timer to avoid unnecessary all-night exposure.",
     "referencesTitle": "Scientific References"
+  },
+  "curated": {
+    "badge": "EVIDENCE-BASED SLEEP & FOCUS",
+    "title": "Recommended Sleep & Deep Focus Books",
+    "book1Title": "Why We Sleep: Unlocking the Power of Sleep and Dreams",
+    "book1Desc": "Matthew Walker, Ph.D. • How restorative acoustics & sleep architecture restore brain function.",
+    "book2Title": "Deep Work: Rules for Focused Success in a Distracted World",
+    "book2Desc": "Cal Newport, Ph.D. • Building uninterrupted cognitive flow alongside ambient sound.",
+    "readPill": "View Book ↗",
+    "disclosure": "Curated for sleep & focus depth. Links use localized stores (dopabrain-20)."
   }
 }

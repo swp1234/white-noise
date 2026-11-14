@@ -126,5 +126,15 @@
     "faq4Q": "Q: Quel volume et quelle distance d'écoute sont recommandés ?",
     "faq4A": "A: Moins de 60 dBA à hauteur d'oreille, à 1,5–2 mètres du lit, avec arrêt automatique via la minuterie.",
     "referencesTitle": "Références Scientifiques"
+  },
+  "curated": {
+    "badge": "SCIENCE DU SOMMEIL & FOCUS",
+    "title": "Lectures Recommandées : Sommeil & Travail Profond",
+    "book1Title": "Pourquoi nous dormons (Why We Sleep)",
+    "book1Desc": "Dr Matthew Walker • Comprendre les cycles du sommeil et l’environnement sonore.",
+    "book2Title": "Deep Work : Retrouver la concentration",
+    "book2Desc": "Cal Newport • Bâtir des sessions d’attention profonde avec un fond sonore stable.",
+    "readPill": "Voir le livre ↗",
+    "disclosure": "Sélection éditoriale consacrée à l’hygiène du sommeil et au focus."
   }
 }
