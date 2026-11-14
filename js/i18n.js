@@ -41,26 +41,68 @@ class I18n {
         return value;
     }
 
+    getSeoHref(lang) {
+        if (!lang || lang === 'x-default' || lang === 'en') {
+            return 'https://dopabrain.com/white-noise/';
+        }
+        return `https://dopabrain.com/white-noise/?lang=${lang}`;
+    }
+
+    syncSeoState(lang, updateHistory = false) {
+        const canonicalHref = this.getSeoHref(lang);
+        const canonicalEl = document.querySelector('link[rel="canonical"]');
+        if (canonicalEl) canonicalEl.href = canonicalHref;
+
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.content = canonicalHref;
+
+        document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(link => {
+            const hreflang = link.getAttribute('hreflang');
+            link.href = this.getSeoHref(hreflang === 'x-default' ? 'x-default' : hreflang);
+        });
+
+        if (updateHistory) {
+            const nextUrl = new URL(window.location.href);
+            if (lang === 'en') {
+                nextUrl.searchParams.delete('lang');
+            } else {
+                nextUrl.searchParams.set('lang', lang);
+            }
+            if (window.location.search !== nextUrl.search) {
+                window.history.replaceState({}, '', nextUrl.pathname + nextUrl.search + nextUrl.hash);
+            }
+        }
+    }
+
     async setLanguage(lang) {
         if (!this.supportedLanguages.includes(lang)) return false;
         if (!this.translations[lang]) await this.loadTranslations(lang);
         this.currentLang = lang;
-        localStorage.setItem('app_language', lang);
+        try { localStorage.setItem('app_language', lang); } catch (e) {}
         document.documentElement.lang = lang;
+        this.syncSeoState(lang, true);
         this.updateUI();
         return true;
     }
 
     updateUI() {
+        document.documentElement.lang = this.currentLang;
+        this.syncSeoState(this.currentLang, false);
         document.querySelectorAll('[data-i18n]').forEach(el => {
-            el.textContent = this.t(el.getAttribute('data-i18n'));
+            const key = el.getAttribute('data-i18n');
+            const val = this.t(key);
+            if (val && val !== key) el.textContent = val;
         });
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-            el.placeholder = this.t(el.getAttribute('data-i18n-placeholder'));
+            const key = el.getAttribute('data-i18n-placeholder');
+            const val = this.t(key);
+            if (val && val !== key) el.placeholder = val;
         });
-        document.title = this.t('app.title');
+        const title = this.t('app.title');
+        if (title && title !== 'app.title') document.title = title;
         const meta = document.querySelector('meta[name="description"]');
-        if (meta) meta.content = this.t('app.description');
+        const desc = this.t('app.description');
+        if (meta && desc && desc !== 'app.description') meta.content = desc;
     }
 
     getCurrentLanguage() {

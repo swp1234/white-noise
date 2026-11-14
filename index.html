@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3600813755953882" crossorigin="anonymous"></script>
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="description" content="Mix 15 nature sounds like rain, ocean waves, and campfire to boost focus and sleep quality. Create your perfect soundscape with the mixer. Try free!">
-    <meta name="dateModified" content="2026-11-12">
-    <meta name="keywords" content="백색소음, 수면 소리, 집중 소리, 명상 소리, 자연 소리, ASMR, 빗소리, 파도 소리, 공부 소음, 수면 유도 소리, 이완 음악">
+    <meta name="dateModified" content="2026-11-14">
+    <meta name="keywords" content="white noise, sleep sounds, focus sounds, meditation sounds, nature sounds, ASMR, rain sounds, ocean waves, study noise, brown noise, pink noise">
     <meta name="theme-color" content="#2c3e50">
     <title>White Noise Player - Free Sleep & Focus Sounds | DopaBrain</title>
     <meta name="author" content="DopaBrain">
@@ -19,6 +19,24 @@
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8GSWM40TV"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-J8GSWM40TV');</script>
+    <script>
+        (function syncInitialSeoLang() {
+            var supported = ['ko', 'en', 'ja', 'es', 'pt', 'zh', 'id', 'tr', 'de', 'fr', 'hi', 'ru'];
+            var lang = '';
+            try {
+                lang = new URLSearchParams(window.location.search).get('lang') || '';
+            } catch (e) {}
+            if (supported.indexOf(lang) === -1) lang = 'en';
+            document.documentElement.lang = lang;
+            var seoUrl = lang === 'en'
+                ? 'https://dopabrain.com/white-noise/'
+                : 'https://dopabrain.com/white-noise/?lang=' + lang;
+            var can = document.querySelector('link[rel="canonical"]');
+            if (can) can.href = seoUrl;
+            var ogu = document.querySelector('meta[property="og:url"]');
+            if (ogu) ogu.content = seoUrl;
+        })();
+    </script>
     <!-- Open Graph -->
     <meta property="og:title" content="White Noise Player - Free Sleep & Focus Sounds | DopaBrain">
     <meta property="og:description" content="Mix 15 nature sounds — rain, ocean waves, campfire — to create your perfect sleep and focus environment. Try free!">
@@ -28,15 +46,15 @@
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
     <meta property="og:locale:alternate" content="ja_JP">
     <meta property="og:locale:alternate" content="zh_CN">
     <meta property="og:locale:alternate" content="hi_IN">
     <meta property="og:locale:alternate" content="ru_RU">
     <!-- hreflang for multilingual SEO -->
-    <link rel="alternate" hreflang="ko" href="https://dopabrain.com/white-noise/">
-    <link rel="alternate" hreflang="en" href="https://dopabrain.com/white-noise/?lang=en">
+    <link rel="alternate" hreflang="en" href="https://dopabrain.com/white-noise/">
+    <link rel="alternate" hreflang="ko" href="https://dopabrain.com/white-noise/?lang=ko">
     <link rel="alternate" hreflang="zh" href="https://dopabrain.com/white-noise/?lang=zh">
     <link rel="alternate" hreflang="hi" href="https://dopabrain.com/white-noise/?lang=hi">
     <link rel="alternate" hreflang="ru" href="https://dopabrain.com/white-noise/?lang=ru">
@@ -158,18 +176,18 @@
         <div class="loader-content">
             <div class="loader-emoji">🎵</div>
             <div class="loader-spinner"></div>
-            <div class="loader-text" data-i18n="app.loading">로딩 중...</div>
+            <div class="loader-text" data-i18n="app.loading">Loading...</div>
         </div>
     </div>
-    <!-- 테마 토글 -->
+    <!-- Theme Toggle -->
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀️</button>
     
     <!-- Language Selector -->
     <div class="language-selector">
         <button class="lang-btn" id="langBtn" title="Language">🌐</button>
         <div class="lang-menu hidden" id="langMenu">
-            <button class="lang-option active" data-lang="ko">🇰🇷 한국어</button>
-            <button class="lang-option" data-lang="en">🇺🇸 English</button>
+            <button class="lang-option" data-lang="ko">🇰🇷 한국어</button>
+            <button class="lang-option active" data-lang="en">🇺🇸 English</button>
             <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
             <button class="lang-option" data-lang="es">🇪🇸 Español</button>
             <button class="lang-option" data-lang="pt">🇧🇷 Português</button>
@@ -184,163 +202,163 @@
     </div>
     <div class="app-container">
 
-        <!-- 헤더 -->
+        <!-- Header -->
         <header class="app-header">
-            <h1>🌙 <span data-i18n="header.title">백색소음</span></h1>
-            <p class="subtitle" data-i18n="header.subtitle">집중 · 수면 · 명상</p>
+            <h1>🌙 <span data-i18n="header.title">White Noise</span></h1>
+            <p class="subtitle" data-i18n="header.subtitle">Focus · Sleep · Meditation</p>
         </header>
 
-        <!-- 메인 콘텐츠 -->
+        <!-- Main Content -->
         <main class="main-content" id="main-content">
-            <!-- 타이머 섹션 -->
+            <!-- Timer Section -->
             <section class="timer-section">
                 <div class="timer-display" id="timer-display">∞</div>
                 <div class="timer-controls">
-                    <button class="timer-btn" data-minutes="15" data-i18n="timer.15min">15분</button>
-                    <button class="timer-btn" data-minutes="30" data-i18n="timer.30min">30분</button>
-                    <button class="timer-btn" data-minutes="60" data-i18n="timer.1hour">1시간</button>
-                    <button class="timer-btn active" data-minutes="0" data-i18n="timer.infinite">무한</button>
+                    <button class="timer-btn" data-minutes="15" data-i18n="timer.15min">15 min</button>
+                    <button class="timer-btn" data-minutes="30" data-i18n="timer.30min">30 min</button>
+                    <button class="timer-btn" data-minutes="60" data-i18n="timer.1hour">1 hour</button>
+                    <button class="timer-btn active" data-minutes="0" data-i18n="timer.infinite">Infinite</button>
                 </div>
             </section>
 
-            <!-- detox-timer 추천 섹션 -->
+            <!-- Detox Timer Promo Section -->
             <section class="cross-promo-section">
                 <a href="/detox-timer/" data-base-href="/detox-timer/" class="promo-link">
                     <span class="promo-icon">📵</span>
-                    <span class="promo-text" data-i18n="promo.detox">디지털 디톡스와 함께 사용하기</span>
+                    <span class="promo-text" data-i18n="promo.detox">Pair with Digital Detox</span>
                     <span class="promo-arrow">→</span>
                 </a>
             </section>
 
-            <!-- 사운드 믹서 -->
+            <!-- Sound Mixer -->
             <section class="mixer-section">
-                <h2>🌿 <span data-i18n="sounds.nature">자연 소리</span></h2>
+                <h2>🌿 <span data-i18n="sounds.nature">Natural Sounds</span></h2>
                 <div class="sound-grid" id="sound-grid">
                     <div class="sound-card" data-sound="rain">
                         <div class="sound-icon">🌧️</div>
-                        <div class="sound-name" data-i18n="sounds.rain">비</div>
+                        <div class="sound-name" data-i18n="sounds.rain">Rain</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="thunder">
                         <div class="sound-icon">⛈️</div>
-                        <div class="sound-name" data-i18n="sounds.thunder">천둥</div>
+                        <div class="sound-name" data-i18n="sounds.thunder">Thunder</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="wind">
                         <div class="sound-icon">💨</div>
-                        <div class="sound-name" data-i18n="sounds.wind">바람</div>
+                        <div class="sound-name" data-i18n="sounds.wind">Wind</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="forest">
                         <div class="sound-icon">🌲</div>
-                        <div class="sound-name" data-i18n="sounds.forest">숲</div>
+                        <div class="sound-name" data-i18n="sounds.forest">Forest</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="birds">
                         <div class="sound-icon">🐦</div>
-                        <div class="sound-name" data-i18n="sounds.birds">새소리</div>
+                        <div class="sound-name" data-i18n="sounds.birds">Birds</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="ocean">
                         <div class="sound-icon">🌊</div>
-                        <div class="sound-name" data-i18n="sounds.ocean">파도</div>
+                        <div class="sound-name" data-i18n="sounds.ocean">Ocean</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="fire">
                         <div class="sound-icon">🔥</div>
-                        <div class="sound-name" data-i18n="sounds.fire">모닥불</div>
+                        <div class="sound-name" data-i18n="sounds.fire">Fire</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="river">
                         <div class="sound-icon">🏞️</div>
-                        <div class="sound-name" data-i18n="sounds.river">시냇물</div>
+                        <div class="sound-name" data-i18n="sounds.river">River</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="waterfall">
                         <div class="sound-icon">💧</div>
-                        <div class="sound-name" data-i18n="sounds.waterfall">폭포</div>
+                        <div class="sound-name" data-i18n="sounds.waterfall">Waterfall</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="crickets">
                         <div class="sound-icon">🦗</div>
-                        <div class="sound-name" data-i18n="sounds.crickets">귀뚜라미</div>
+                        <div class="sound-name" data-i18n="sounds.crickets">Crickets</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                 </div>
 
-                <h2>🎧 <span data-i18n="sounds.noise">백색소음 & 노이즈</span></h2>
+                <h2>🎧 <span data-i18n="sounds.noise">White Noise &amp; Noise</span></h2>
                 <div class="sound-grid">
                     <div class="sound-card" data-sound="white">
                         <div class="sound-icon">⬜</div>
-                        <div class="sound-name" data-i18n="sounds.white">백색소음</div>
+                        <div class="sound-name" data-i18n="sounds.white">White Noise</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="pink">
                         <div class="sound-icon">🩷</div>
-                        <div class="sound-name" data-i18n="sounds.pink">핑크노이즈</div>
+                        <div class="sound-name" data-i18n="sounds.pink">Pink Noise</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="brown">
                         <div class="sound-icon">🟫</div>
-                        <div class="sound-name" data-i18n="sounds.brown">브라운노이즈</div>
+                        <div class="sound-name" data-i18n="sounds.brown">Brown Noise</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                 </div>
 
-                <h2>🏠 <span data-i18n="sounds.ambient">생활 소리</span></h2>
+                <h2>🏠 <span data-i18n="sounds.ambient">Ambient Sounds</span></h2>
                 <div class="sound-grid">
                     <div class="sound-card" data-sound="cafe">
                         <div class="sound-icon">☕</div>
-                        <div class="sound-name" data-i18n="sounds.cafe">카페</div>
+                        <div class="sound-name" data-i18n="sounds.cafe">Cafe</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="keyboard">
                         <div class="sound-icon">⌨️</div>
-                        <div class="sound-name" data-i18n="sounds.keyboard">키보드</div>
+                        <div class="sound-name" data-i18n="sounds.keyboard">Keyboard</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="train">
                         <div class="sound-icon">🚂</div>
-                        <div class="sound-name" data-i18n="sounds.train">기차</div>
+                        <div class="sound-name" data-i18n="sounds.train">Train</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="fan">
                         <div class="sound-icon">🌀</div>
-                        <div class="sound-name" data-i18n="sounds.fan">선풍기</div>
+                        <div class="sound-name" data-i18n="sounds.fan">Fan</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                     <div class="sound-card" data-sound="aircon">
                         <div class="sound-icon">❄️</div>
-                        <div class="sound-name" data-i18n="sounds.aircon">에어컨</div>
+                        <div class="sound-name" data-i18n="sounds.aircon">Air Conditioner</div>
                         <input type="range" class="volume-slider" min="0" max="100" value="0">
                     </div>
                 </div>
             </section>
 
-            <!-- 프리셋 섹션 -->
+            <!-- Preset Section -->
             <section class="preset-section">
-                <h2 data-i18n="presets.title">추천 프리셋</h2>
+                <h2 data-i18n="presets.title">Recommended Presets</h2>
                 <div class="preset-grid">
                     <button class="preset-btn" data-preset="sleep">
                         <span class="preset-icon">😴</span>
-                        <span class="preset-name" data-i18n="presets.sleep">수면</span>
+                        <span class="preset-name" data-i18n="presets.sleep">Sleep</span>
                     </button>
                     <button class="preset-btn" data-preset="focus">
                         <span class="preset-icon">🎯</span>
-                        <span class="preset-name" data-i18n="presets.focus">집중</span>
+                        <span class="preset-name" data-i18n="presets.focus">Focus</span>
                     </button>
                     <button class="preset-btn" data-preset="relax">
                         <span class="preset-icon">🧘</span>
-                        <span class="preset-name" data-i18n="presets.relax">명상</span>
+                        <span class="preset-name" data-i18n="presets.relax">Relax</span>
                     </button>
                     <button class="preset-btn" data-preset="nature">
                         <span class="preset-icon">🌳</span>
-                        <span class="preset-name" data-i18n="presets.nature">자연</span>
+                        <span class="preset-name" data-i18n="presets.nature">Nature</span>
                     </button>
                 </div>
             </section>
 
-            <!-- 마스터 컨트롤 -->
+            <!-- Master Controls -->
             <section class="master-section">
                 <div class="master-volume">
                     <span>🔊</span>
@@ -352,24 +370,24 @@
                 </button>
             </section>
 
-            <!-- 사용 통계 -->
+            <!-- Usage Stats -->
             <section class="usage-stats-section">
-                <h3 class="section-subtitle" data-i18n="usage.title">📊 나의 사용 기록</h3>
+                <h3 class="section-subtitle" data-i18n="usage.title">📊 My Usage History</h3>
                 <div class="usage-stats-grid" id="usage-stats"></div>
             </section>
 
-            <!-- 프리미엄 기능 -->
+            <!-- Sleep Tips Section -->
             <section class="premium-section">
                 <button class="premium-btn" id="premium-btn">
                     <span class="premium-icon">✨</span>
-                    <span data-i18n="buttons.premium">수면 분석 & 팁 보기</span>
+                    <span data-i18n="buttons.premium">Sleep Tips &amp; Analysis</span>
                     
                 </button>
             </section>
 
-            <!-- 프리미엄 결과 -->
+            <!-- Sleep Tips Card -->
             <div class="result-card premium-result hidden" id="premium-result">
-                <div class="premium-badge" data-i18n="premium.badge">✨ 수면 전문가 팁</div>
+                <div class="premium-badge" data-i18n="premium.badge">✨ Sleep Expert Tips</div>
                 <div id="premium-content"></div>
             </div>
             <!-- Educational & Scientific Guide Section -->
@@ -420,11 +438,11 @@
             </details>
         </main>
 
-        <!-- DopaBrain 홈 링크 -->
+        <!-- DopaBrain Home Link -->
         <footer class="game-footer">
             <a href="https://dopabrain.com/portal/" class="back-link" data-i18n="game.back">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m15 18-6-6 6-6"></path></svg>
-                DopaBrain 홈
+                DopaBrain Home
             </a>
         </footer>
     </div>
@@ -433,7 +451,7 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(() => {});
+          navigator.serviceWorker.register('sw.js').catch(() => {});
         });
       }
     </script>

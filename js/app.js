@@ -651,9 +651,13 @@ class WhiteNoiseApp {
         const container = document.getElementById('usage-stats');
         if (!container || !this.sessionStats) return;
 
+        const currentLang = (window.i18n ? window.i18n.currentLang : 'en') || 'en';
         const hours = Math.floor((this.sessionStats?.totalMinutes || 0) / 60);
         const mins = (this.sessionStats?.totalMinutes || 0) % 60;
-        const timeStr = hours > 0 ? `${hours}시간 ${mins}분` : `${mins}분`;
+        const isKo = currentLang === 'ko';
+        const timeStr = isKo
+            ? (hours > 0 ? `${hours}시간 ${mins}분` : `${mins}분`)
+            : (hours > 0 ? `${hours}h ${mins}m` : `${mins}m`);
 
         // 안전한 DOM 생성 (innerHTML 대신 createElement 사용)
         container.innerHTML = '';
@@ -675,9 +679,19 @@ class WhiteNoiseApp {
             return div;
         };
 
-        container.appendChild(createStat(this.sessionStats?.totalSessions || 0, '세션'));
-        container.appendChild(createStat(timeStr, '총 사용'));
-        container.appendChild(createStat(this.sessionStats?.streak || 0, '연속일'));
+        const labels = {
+            ko: ['세션', '총 사용', '연속일'],
+            ja: ['セッション', '合計', '連続日'],
+            zh: ['次会话', '总时长', '连续天'],
+            es: ['Sesiones', 'Total', 'Racha'],
+            pt: ['Sessões', 'Total', 'Sequência'],
+            de: ['Sitzungen', 'Gesamt', 'Serie'],
+            fr: ['Sessions', 'Total', 'Série']
+        }[currentLang] || ['Sessions', 'Total Time', 'Day Streak'];
+
+        container.appendChild(createStat(this.sessionStats?.totalSessions || 0, labels[0]));
+        container.appendChild(createStat(timeStr, labels[1]));
+        container.appendChild(createStat(this.sessionStats?.streak || 0, labels[2]));
     }
 
     registerServiceWorker() {
@@ -702,7 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Funnel bridge & language preservation
 function initRelatedFunnels() {
     const urlParams = new URLSearchParams(window.location.search);
-    const lang = (window.i18n ? window.i18n.currentLang : null) || urlParams.get('lang') || 'ko';
+    const lang = (window.i18n ? window.i18n.currentLang : null) || urlParams.get('lang') || 'en';
     const base = (window.location.origin && window.location.origin !== 'null') ? window.location.origin : 'https://dopabrain.com';
     document.querySelectorAll('.related-grid a, a.promo-link').forEach(link => {
         const baseHref = link.getAttribute('data-base-href') || link.getAttribute('href');
