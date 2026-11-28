@@ -1,4 +1,4 @@
-const CACHE_NAME = 'white-noise-v2';
+const CACHE_NAME = 'white-noise-v2-harmony26';
 const urlsToCache = [
     '/',
     '/index.html',
