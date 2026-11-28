@@ -3,7 +3,7 @@
     --primary: #5d6d7e;
     --primary-dark: #2c3e50;
     --primary-light: #85929e;
-    --accent: #9b59b6;
+    --accent: #c084fc;
     --bg-dark: #1a1a2e;
     --bg-card: rgba(93, 109, 126, 0.1);
     --text-primary: #ecf0f1;
@@ -35,8 +35,8 @@ input[type="text"], textarea {
 /* 테마 토글 - 언어 선택기 옆 */
 .theme-toggle {
     position: fixed;
-    top: 12px;
-    right: 58px;
+    top: 20px;
+    right: 74px;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -254,7 +254,7 @@ body {
 /* 헤더 */
 .app-header {
     text-align: center;
-    padding: 20px 0;
+    padding: 64px 0 18px;
 }
 
 .app-header h1 {
@@ -432,10 +432,12 @@ body {
 
 .volume-slider {
     width: 100%;
-    height: 5px;
+    height: 44px;
+    padding: 19px 0;
+    background-clip: content-box;
     -webkit-appearance: none;
     appearance: none;
-    background: var(--glass-border);
+    background-color: var(--glass-border);
     border-radius: 3px;
     outline: none;
     cursor: pointer;
@@ -848,15 +850,16 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.74);
     text-decoration: none;
     font-size: 13px;
-    padding: 12px 0;
+    min-height: 44px;
+    padding: 12px 8px;
     transition: color 0.2s;
 }
 
 .back-link:hover, .home-link:hover {
-    color: rgba(255,255,255,0.7);
+    color: #ffffff;
 }
 
 /* Cross-Promo Section (detox-timer 연동) */
@@ -1066,8 +1069,9 @@ body {
 /* === Accessibility Improvements === */
 button:focus-visible,a:focus-visible,input:focus-visible,[role="button"]:focus-visible{outline:3px solid #2c3e50;outline-offset:2px;}
 button,a[href],input[type="button"],input[type="submit"],[role="button"]{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
-.skip-link{position:absolute;top:-40px;left:0;background:#2c3e50;color:white;padding:8px;text-decoration:none;z-index:100;}
-.skip-link:focus{top:0;}
+.skip-link{position:absolute;top:-999px;left:12px;background:#2c3e50;color:white;padding:10px 16px;border-radius:10px;text-decoration:none;z-index:10001;}
+.skip-link:focus{top:12px;}
+:lang(ko) h1,:lang(ko) h2,:lang(ko) p{word-break:keep-all;overflow-wrap:break-word;}
 [role="dialog"]{z-index:1000;}
 @media (prefers-reduced-motion: reduce){*{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}}
 @media (prefers-contrast: more){button{border:2px solid #2c3e50;}}
