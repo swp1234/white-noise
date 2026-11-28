@@ -309,7 +309,8 @@ body {
 
 .timer-btn.active {
     background: var(--accent);
-    color: white;
+    color: #140826;
+    font-weight: 700;
     border-color: var(--accent);
 }
 
